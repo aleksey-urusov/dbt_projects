@@ -18,7 +18,7 @@ clean-targets: [target, dbt_modules]
 
 ## Models
 models:
-  tasty_bytes:
+  dbt_project:
     staging:
       +materialized: view
     marts:

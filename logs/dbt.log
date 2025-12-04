@@ -1,0 +1,70 @@
+
+
+============================== 15:01:23.937157 | 7631a30d-d5d2-4849-ba84-807e30c72b5e ==============================
+[0m15:01:23.937157 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m15:01:23.938364 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'profiles_dir': '/tmp/dbt/', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt ', 'static_parser': 'True', 'introspect': 'True', 'target_path': '/tmp/dbt/target/', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m15:01:24.303578 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m15:01:25.112154 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m15:01:25.113565 [info ] [Dummy-1   ]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m15:01:26.278879 [warn ] [Dummy-1   ]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.tasty_bytes.staging
+- models.tasty_bytes.marts
+[0m15:01:26.340649 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m15:01:26.343354 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m15:01:26.392791 [info ] [Dummy-1   ]: Found 474 macros
+[0m15:01:26.394894 [warn ] [Dummy-1   ]: Nothing to do. Try checking your model configs and model specification args
+[0m15:01:26.395769 [debug] [Dummy-1   ]: Command end result
+[0m15:01:26.423147 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m15:01:26.425519 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m15:01:26.429796 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m15:01:26.432044 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 2.5920465, "process_in_blocks": "0", "process_kernel_time": 1.15, "process_mem_max_rss": "410840", "process_out_blocks": "0", "process_user_time": 5.71}
+[0m15:01:26.432896 [debug] [Dummy-1   ]: Command `cli compile` succeeded at 15:01:26.432617 after 2.59 seconds
+[0m15:01:26.433620 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 15:05:24.094647 | 7d0b49c7-ec06-4188-88ba-931db01ffc98 ==============================
+[0m15:05:24.094647 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m15:05:24.095783 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt ', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': '/tmp/dbt/target/', 'static_parser': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m15:05:24.460373 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m15:05:25.238727 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m15:05:25.336044 [info ] [Dummy-1   ]: Unable to do partial parsing because a project config has changed
+[0m15:05:26.485224 [warn ] [Dummy-1   ]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.dbt_project.staging
+- models.dbt_project.marts
+[0m15:05:26.546350 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m15:05:26.549177 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m15:05:26.606307 [info ] [Dummy-1   ]: Found 474 macros
+[0m15:05:26.608369 [warn ] [Dummy-1   ]: Nothing to do. Try checking your model configs and model specification args
+[0m15:05:26.609315 [debug] [Dummy-1   ]: Command end result
+[0m15:05:26.636362 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m15:05:26.638540 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m15:05:26.642656 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m15:05:26.644707 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.6454914, "process_in_blocks": "0", "process_kernel_time": 1.24, "process_mem_max_rss": "407928", "process_out_blocks": "0", "process_user_time": 5.57}
+[0m15:05:26.645463 [debug] [Dummy-1   ]: Command `cli run` succeeded at 15:05:26.645151 after 2.65 seconds
+[0m15:05:26.646122 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 15:07:25.623480 | 7cb54d85-721d-4d2b-89e1-b852533a673e ==============================
+[0m15:07:25.623480 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m15:07:25.624579 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'debug': 'False', 'warn_error': 'None', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt ', 'introspect': 'True', 'static_parser': 'True', 'target_path': '/tmp/dbt/target/', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m15:07:25.994122 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m15:07:26.768117 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m15:07:26.957070 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:07:26.957829 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:07:26.959140 [warn ] [Dummy-1   ]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.dbt_project.marts
+- models.dbt_project.staging
+[0m15:07:27.137101 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m15:07:27.139669 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m15:07:27.194840 [info ] [Dummy-1   ]: Found 474 macros
+[0m15:07:27.197063 [warn ] [Dummy-1   ]: Nothing to do. Try checking your model configs and model specification args
+[0m15:07:27.199940 [debug] [Dummy-1   ]: Command end result
+[0m15:07:27.228796 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m15:07:27.231221 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m15:07:27.235580 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m15:07:27.237692 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.7103945, "process_in_blocks": "0", "process_kernel_time": 1.12, "process_mem_max_rss": "405832", "process_out_blocks": "0", "process_user_time": 4.84}
+[0m15:07:27.238546 [debug] [Dummy-1   ]: Command `cli run` succeeded at 15:07:27.238192 after 1.71 seconds
+[0m15:07:27.239210 [debug] [Dummy-1   ]: Flushing usage events
