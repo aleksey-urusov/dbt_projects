@@ -2342,3 +2342,87 @@ on c.customer_id=ba.customer_id
 [0m12:54:49.406767 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.6267824, "process_in_blocks": "0", "process_kernel_time": 1.3, "process_mem_max_rss": "435148", "process_out_blocks": "0", "process_user_time": 5.15}
 [0m12:54:49.407515 [debug] [Dummy-1   ]: Command `cli run` succeeded at 12:54:49.407243 after 3.63 seconds
 [0m12:54:49.408098 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 13:55:04.426790 | 293af220-2d37-48f1-946f-c285bb124b2e ==============================
+[0m13:55:04.426790 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m13:55:04.427943 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'fail_fast': 'False', 'profiles_dir': '/tmp/dbt/', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': '/tmp/dbt/target/', 'static_parser': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m13:55:04.514880 [warn ] [Dummy-1   ]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m13:55:04.800210 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m13:55:05.524012 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m13:55:05.722939 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m13:55:05.723609 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m13:55:05.955067 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m13:55:05.957877 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m13:55:06.014118 [info ] [Dummy-1   ]: Found 1 model, 474 macros
+[0m13:55:06.016646 [info ] [Dummy-1   ]: 
+[0m13:55:06.017325 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m13:55:06.017883 [info ] [Dummy-1   ]: 
+[0m13:55:06.018873 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m13:55:06.021053 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT'
+[0m13:55:06.170385 [debug] [ThreadPool]: Using snowflake connection "list_DBT"
+[0m13:55:06.171043 [debug] [ThreadPool]: On list_DBT: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT"} */
+show terse schemas in database DBT
+    limit 10000
+[0m13:55:06.171658 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:55:06.505689 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.334 seconds
+[0m13:55:06.510407 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_DBT_PROJECTS_customer'
+[0m13:55:06.528158 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_customer"
+[0m13:55:06.528941 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_customer: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_customer"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m13:55:06.529529 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:55:06.866930 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.337 seconds
+[0m13:55:06.873276 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_customer"
+[0m13:55:06.874121 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_customer: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_customer"} */
+show objects in DBT.DBT_PROJECTS_customer
+    limit 10000
+    
+;
+[0m13:55:06.947126 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.072 seconds
+[0m13:55:06.949829 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_customer"
+[0m13:55:06.950634 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_customer: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_customer"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m13:55:06.999673 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.048 seconds
+[0m13:55:07.008259 [debug] [Thread-2 (]: Began running node model.dbt_try.customer_view
+[0m13:55:07.009354 [info ] [Thread-2 (]: 1 of 1 START sql view model DBT_PROJECTS_customer.customer_view ................ [RUN]
+[0m13:55:07.010325 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DBT_DBT_PROJECTS_customer, now model.dbt_try.customer_view)
+[0m13:55:07.011003 [debug] [Thread-2 (]: Began compiling node model.dbt_try.customer_view
+[0m13:55:07.024395 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_try.customer_view"
+[0m13:55:07.025387 [debug] [Thread-2 (]: Began executing node model.dbt_try.customer_view
+[0m13:55:07.099466 [debug] [Thread-2 (]: Writing runtime sql for node "model.dbt_try.customer_view"
+[0m13:55:07.101177 [debug] [Thread-2 (]: Using snowflake connection "model.dbt_try.customer_view"
+[0m13:55:07.101868 [debug] [Thread-2 (]: On model.dbt_try.customer_view: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "node_id": "model.dbt_try.customer_view"} */
+create or replace   view DBT.DBT_PROJECTS_customer.customer_view
+  
+   as (
+    
+
+select c.customer_name, ba.account_num, ba.routing_num
+from dbt.dbt_projects.customer c
+join dbt.dbt_projects.bank_account ba
+on c.customer_id=ba.customer_id
+  );
+[0m13:55:07.102465 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m13:55:07.565800 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.463 seconds
+[0m13:55:07.607503 [info ] [Thread-2 (]: 1 of 1 OK created sql view model DBT_PROJECTS_customer.customer_view ........... [[32mSUCCESS 1[0m in 0.59s]
+[0m13:55:07.608573 [debug] [Thread-2 (]: Finished running node model.dbt_try.customer_view
+[0m13:55:07.611464 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m13:55:07.612172 [debug] [Dummy-1   ]: Connection 'list_DBT' was properly closed.
+[0m13:55:07.612807 [debug] [Dummy-1   ]: Connection 'model.dbt_try.customer_view' was properly closed.
+[0m13:55:07.613366 [info ] [Dummy-1   ]: 
+[0m13:55:07.614040 [info ] [Dummy-1   ]: Finished running 1 view model in 0 hours 0 minutes and 1.59 seconds (1.59s).
+[0m13:55:07.615098 [debug] [Dummy-1   ]: Command end result
+[0m13:55:07.646360 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m13:55:07.649091 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m13:55:07.657285 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m13:55:07.657880 [info ] [Dummy-1   ]: 
+[0m13:55:07.658681 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m13:55:07.659215 [info ] [Dummy-1   ]: 
+[0m13:55:07.659764 [info ] [Dummy-1   ]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m13:55:07.661681 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.332119, "process_in_blocks": "0", "process_kernel_time": 1.18, "process_mem_max_rss": "439032", "process_out_blocks": "0", "process_user_time": 5.25}
+[0m13:55:07.662416 [debug] [Dummy-1   ]: Command `cli run` succeeded at 13:55:07.662125 after 3.33 seconds
+[0m13:55:07.662999 [debug] [Dummy-1   ]: Flushing usage events

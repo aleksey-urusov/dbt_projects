@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: ecomm
+    schema: ecomm
+    tables:
+      - name: order_raw
+      - name: customer_raw
