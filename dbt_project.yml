@@ -13,13 +13,15 @@ macro-paths: [macros]
 snapshot-paths: [snapshots]
 
 ## Target
-target-path: target
-clean-targets: [target, dbt_modules]
+target-path: scripts
+clean-targets: [scripts, dbt_modules]
 
-## Models
 models:
-  dbt_project:
-    staging:
-      +materialized: view
+  dbt_try: # this matches the `name:`` config
+    +materialized: view 
     marts:
-      +materialized: table
+      +materialized: table      
+      customer:
+        +schema: customer     
+
+        
