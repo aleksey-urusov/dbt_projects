@@ -10,6 +10,6 @@ CREATE OR REPLACE FILE FORMAT ecomm_orders
 CREATE OR REPLACE STAGE ecomm_my_local_stage
   FILE_FORMAT = ecomm_orders;
 
-  /home/aleksei/Desktop/dbt/seeds
+ 
 
   
