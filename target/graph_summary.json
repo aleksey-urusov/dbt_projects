@@ -1,1 +1,1 @@
-{"_invocation_id": "293af220-2d37-48f1-946f-c285bb124b2e", "linked": {"0": {"name": "model.dbt_try.customer_view", "type": "model"}}}
+{"_invocation_id": "49ed0417-5fdb-4119-9144-858a49be4f5b", "linked": {"0": {"name": "source.dbt_try.ecomm.order_raw", "type": "source", "succ": [3]}, "1": {"name": "source.dbt_try.ecomm.customer_raw", "type": "source"}, "2": {"name": "model.dbt_try.mart_ecomm_customers", "type": "model"}, "3": {"name": "model.dbt_try.mart_ecomm_orders", "type": "model"}}}
