@@ -4,6 +4,9 @@ version: "1.0"
 config-version: 2
 profile: dbt_try
 
+vars:
+  file_format_name: 'ff_ecomm_customer'
+
 ## Sources
 model-paths: [models]
 analysis-paths: [analysis]
@@ -12,9 +15,12 @@ seed-paths: [seeds]
 macro-paths: [macros]
 snapshot-paths: [snapshots]
 
+on-run-start:
+  - "{{ ff_stage_ecomm_customer ('DBT.ECOMM.ECOMM_STAGE_CUSTOMER')}}"
+
 ## Target
-target-path: scripts
-clean-targets: [scripts, dbt_modules]
+## target-path: scripts
+## clean-targets: [scripts, dbt_modules]
 
 models:
   dbt_try: # this matches the `name:`` config
