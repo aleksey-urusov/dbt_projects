@@ -17,6 +17,7 @@ snapshot-paths: [snapshots]
 
 on-run-start:
   - "{{ ff_stage_ecomm_customer ('DBT.ECOMM.ECOMM_STAGE_CUSTOMER')}}"
+  - "{{ sfstage_stage_ecomm_customer ('DBT.ECOMM.ECOMM_STAGE_CUSTOMER')}}"
 
 ## Target
 ## target-path: scripts

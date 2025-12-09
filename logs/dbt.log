@@ -11099,3 +11099,776 @@ FROM DBT.ecomm.order_raw
 [0m13:41:45.316353 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.6902747, "process_in_blocks": "0", "process_kernel_time": 1.3, "process_mem_max_rss": "441308", "process_out_blocks": "0", "process_user_time": 5.77}
 [0m13:41:45.317202 [debug] [Dummy-1   ]: Command `cli run` succeeded at 13:41:45.316916 after 4.69 seconds
 [0m13:41:45.317890 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 17:15:09.924851 | 32364176-6a50-43e1-a322-9ed53c2bf845 ==============================
+[0m17:15:09.924851 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m17:15:09.925952 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/tmp/dbt/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'introspect': 'True', 'static_parser': 'True', 'target_path': '/tmp/dbt/target/', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m17:15:10.294990 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m17:15:11.055135 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m17:15:11.337933 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m17:15:11.339015 [debug] [Dummy-1   ]: Partial parsing: added file: dbt_try://models/utility/stg_file_format.sql.sql
+[0m17:15:11.910382 [warn ] [Dummy-1   ]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_try.marts.customer
+[0m17:15:12.044731 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m17:15:12.047444 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m17:15:12.135444 [info ] [Dummy-1   ]: Found 2 models, 1 operation, 2 sources, 475 macros
+[0m17:15:12.138308 [info ] [Dummy-1   ]: 
+[0m17:15:12.139259 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m17:15:12.139742 [info ] [Dummy-1   ]: 
+[0m17:15:12.140574 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m17:15:12.147914 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT'
+[0m17:15:12.283169 [debug] [ThreadPool]: Using snowflake connection "list_DBT"
+[0m17:15:12.283853 [debug] [ThreadPool]: On list_DBT: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT"} */
+show terse schemas in database DBT
+    limit 10000
+[0m17:15:12.284407 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:15:12.702635 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.418 seconds
+[0m17:15:12.710162 [debug] [ThreadPool]: Using snowflake connection "list_DBT"
+[0m17:15:12.710850 [debug] [ThreadPool]: On list_DBT: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT"} */
+show terse schemas in database DBT
+    limit 10000
+[0m17:15:12.711432 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:15:13.075429 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.364 seconds
+[0m17:15:13.080117 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_DBT_PROJECTS_MART'
+[0m17:15:13.098187 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m17:15:13.098924 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m17:15:13.099434 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:15:13.500668 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.401 seconds
+[0m17:15:13.506480 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m17:15:13.507203 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+show objects in DBT.DBT_PROJECTS_MART
+    limit 10000
+    
+;
+[0m17:15:13.576572 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.069 seconds
+[0m17:15:13.579259 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m17:15:13.579948 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m17:15:13.629049 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.048 seconds
+[0m17:15:13.631604 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DBT_DBT_PROJECTS_MART, now list_DBT_DBT_PROJECTS)
+[0m17:15:13.637520 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS"
+[0m17:15:13.638123 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m17:15:13.638749 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:15:14.008755 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.370 seconds
+[0m17:15:14.011242 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS"
+[0m17:15:14.011827 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS"} */
+show objects in DBT.DBT_PROJECTS
+    limit 10000
+    
+;
+[0m17:15:14.091184 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.079 seconds
+[0m17:15:14.094091 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS"
+[0m17:15:14.094731 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m17:15:14.142176 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.047 seconds
+[0m17:15:14.157792 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.dbt_try.dbt_try-on-run-start-0"
+[0m17:15:14.165501 [info ] [Dummy-1   ]: 1 of 1 START hook: dbt_try.on-run-start.0 ...................................... [RUN]
+[0m17:15:14.166681 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m17:15:14.167348 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "master"} */
+CREATE OR REPLACE FILE FORMAT DBT.ECOMM.ECOMM_STAGE_CUSTOMER
+    TYPE = 'CSV'
+    FIELD_DELIMITER = ','
+    SKIP_HEADER = 1
+    TRIM_SPACE = TRUE
+    EMPTY_FIELD_AS_NULL = TRUE
+[0m17:15:14.167910 [debug] [Dummy-1   ]: Opening a new connection, currently in state init
+[0m17:15:14.576020 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.408 seconds
+[0m17:15:14.577842 [info ] [Dummy-1   ]: 1 of 1 OK hook: dbt_try.on-run-start.0 ......................................... [[32mOK[0m in 0.43s]
+[0m17:15:14.578720 [info ] [Dummy-1   ]: 
+[0m17:15:14.584908 [debug] [Thread-2 (]: Began running node model.dbt_try.mart_ecomm_orders
+[0m17:15:14.586026 [info ] [Thread-2 (]: 1 of 2 START sql table model DBT_PROJECTS_MART.mart_ecomm_orders ............... [RUN]
+[0m17:15:14.586794 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DBT_DBT_PROJECTS, now model.dbt_try.mart_ecomm_orders)
+[0m17:15:14.587422 [debug] [Thread-2 (]: Began compiling node model.dbt_try.mart_ecomm_orders
+[0m17:15:14.596474 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_try.mart_ecomm_orders"
+[0m17:15:14.597351 [debug] [Thread-2 (]: Began executing node model.dbt_try.mart_ecomm_orders
+[0m17:15:14.642120 [debug] [Thread-2 (]: Writing runtime sql for node "model.dbt_try.mart_ecomm_orders"
+[0m17:15:14.643684 [debug] [Thread-2 (]: Using snowflake connection "model.dbt_try.mart_ecomm_orders"
+[0m17:15:14.644355 [debug] [Thread-2 (]: On model.dbt_try.mart_ecomm_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "node_id": "model.dbt_try.mart_ecomm_orders"} */
+create or replace transient table DBT.DBT_PROJECTS_MART.mart_ecomm_orders
+         as
+        (
+
+
+SELECT
+  ORDER_NUM
+, CUSTOMER_ID
+, CAST(AMOUNT AS DECIMAL(10, 2)) AS ORDER_TOTAL_USD
+, SKU
+, ORDER_DATE 
+FROM DBT.ecomm.order_raw
+        );
+[0m17:15:14.644937 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m17:15:15.598460 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.953 seconds
+[0m17:15:15.633450 [info ] [Thread-2 (]: 1 of 2 OK created sql table model DBT_PROJECTS_MART.mart_ecomm_orders .......... [[32mSUCCESS 1[0m in 1.04s]
+[0m17:15:15.634521 [debug] [Thread-2 (]: Finished running node model.dbt_try.mart_ecomm_orders
+[0m17:15:15.635298 [debug] [Thread-2 (]: Began running node model.dbt_try.stg_file_format.sql
+[0m17:15:15.636263 [info ] [Thread-2 (]: 2 of 2 START sql view model DBT_PROJECTS.stg_file_format.sql ................... [RUN]
+[0m17:15:15.637029 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dbt_try.mart_ecomm_orders, now model.dbt_try.stg_file_format.sql)
+[0m17:15:15.637643 [debug] [Thread-2 (]: Began compiling node model.dbt_try.stg_file_format.sql
+[0m17:15:15.643145 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_try.stg_file_format.sql"
+[0m17:15:15.644032 [debug] [Thread-2 (]: Began executing node model.dbt_try.stg_file_format.sql
+[0m17:15:15.687977 [debug] [Thread-2 (]: Writing runtime sql for node "model.dbt_try.stg_file_format.sql"
+[0m17:15:15.689533 [debug] [Thread-2 (]: Using snowflake connection "model.dbt_try.stg_file_format.sql"
+[0m17:15:15.690187 [debug] [Thread-2 (]: On model.dbt_try.stg_file_format.sql: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "node_id": "model.dbt_try.stg_file_format.sql"} */
+create or replace   view DBT.DBT_PROJECTS.stg_file_format.sql
+  
+   as (
+    CREATE OR REPLACE FILE FORMAT 
+  TYPE = 'CSV'
+  FIELD_DELIMITER = '|'
+  SKIP_HEADER = 1
+  -- Add other specific options as needed
+;
+[0m17:15:15.690750 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m17:15:16.114504 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01c0e70b-0000-518e-0012-cccb00019962
+[0m17:15:16.115281 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 001003 (42000): SQL compilation error:
+syntax error line 4 at position 4 unexpected 'CREATE'.
+[0m17:15:16.121443 [debug] [Thread-2 (]: Database Error in model stg_file_format.sql (models/utility/stg_file_format.sql.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 4 at position 4 unexpected 'CREATE'.
+  compiled code at /tmp/dbt/target/run/dbt_try/models/utility/stg_file_format.sql.sql
+[0m17:15:16.122836 [error] [Thread-2 (]: 2 of 2 ERROR creating sql view model DBT_PROJECTS.stg_file_format.sql .......... [[31mERROR[0m in 0.49s]
+[0m17:15:16.123774 [debug] [Thread-2 (]: Finished running node model.dbt_try.stg_file_format.sql
+[0m17:15:16.124742 [debug] [Thread-5 (]: Marking all children of 'model.dbt_try.stg_file_format.sql' to be skipped because of status 'error'.  Reason: Database Error in model stg_file_format.sql (models/utility/stg_file_format.sql.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 4 at position 4 unexpected 'CREATE'.
+  compiled code at /tmp/dbt/target/run/dbt_try/models/utility/stg_file_format.sql.sql.
+[0m17:15:16.127918 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m17:15:16.128564 [debug] [Dummy-1   ]: Connection 'list_DBT' was properly closed.
+[0m17:15:16.129043 [debug] [Dummy-1   ]: Connection 'model.dbt_try.stg_file_format.sql' was properly closed.
+[0m17:15:16.129564 [info ] [Dummy-1   ]: 
+[0m17:15:16.130088 [info ] [Dummy-1   ]: Finished running 1 project hook, 1 table model, 1 view model in 0 hours 0 minutes and 3.99 seconds (3.99s).
+[0m17:15:16.131440 [debug] [Dummy-1   ]: Command end result
+[0m17:15:16.163966 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m17:15:16.166656 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m17:15:16.174970 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m17:15:16.175559 [info ] [Dummy-1   ]: 
+[0m17:15:16.176297 [info ] [Dummy-1   ]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m17:15:16.176834 [info ] [Dummy-1   ]: 
+[0m17:15:16.177486 [error] [Dummy-1   ]:   Database Error in model stg_file_format.sql (models/utility/stg_file_format.sql.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 4 at position 4 unexpected 'CREATE'.
+  compiled code at /tmp/dbt/target/run/dbt_try/models/utility/stg_file_format.sql.sql
+[0m17:15:16.177979 [info ] [Dummy-1   ]: 
+[0m17:15:16.178570 [info ] [Dummy-1   ]: Done. PASS=2 WARN=0 ERROR=1 SKIP=0 TOTAL=3
+[0m17:15:16.180457 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 6.3521266, "process_in_blocks": "0", "process_kernel_time": 1.32, "process_mem_max_rss": "444592", "process_out_blocks": "0", "process_user_time": 5.99}
+[0m17:15:16.181148 [debug] [Dummy-1   ]: Command `cli build` failed at 17:15:16.180878 after 6.35 seconds
+[0m17:15:16.181710 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 17:20:21.992928 | d368f493-c4f6-4aac-962d-93f4cd5ba904 ==============================
+[0m17:20:21.992928 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m17:20:21.994026 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/tmp/dbt/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': '/tmp/dbt/target/', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'False'}
+[0m17:20:22.358657 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m17:20:23.155559 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m17:20:23.423584 [debug] [Dummy-1   ]: Partial parsing enabled: 1 files deleted, 0 files added, 0 files changed.
+[0m17:20:23.424358 [debug] [Dummy-1   ]: Partial parsing: deleted file: dbt_try://models/utility/stg_file_format.sql.sql
+[0m17:20:23.653810 [warn ] [Dummy-1   ]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_try.marts.customer
+[0m17:20:23.789043 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m17:20:23.791655 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m17:20:23.869937 [info ] [Dummy-1   ]: Found 1 model, 1 operation, 2 sources, 475 macros
+[0m17:20:23.872488 [info ] [Dummy-1   ]: 
+[0m17:20:23.873106 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m17:20:23.873614 [info ] [Dummy-1   ]: 
+[0m17:20:23.874463 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m17:20:23.876561 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT'
+[0m17:20:24.022105 [debug] [ThreadPool]: Using snowflake connection "list_DBT"
+[0m17:20:24.022751 [debug] [ThreadPool]: On list_DBT: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT"} */
+show terse schemas in database DBT
+    limit 10000
+[0m17:20:24.023288 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:20:24.416471 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.393 seconds
+[0m17:20:24.420987 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_DBT_PROJECTS_MART'
+[0m17:20:24.438412 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m17:20:24.439129 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m17:20:24.439722 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:20:24.802996 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.363 seconds
+[0m17:20:24.808809 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m17:20:24.809460 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+show objects in DBT.DBT_PROJECTS_MART
+    limit 10000
+    
+;
+[0m17:20:24.888392 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.078 seconds
+[0m17:20:24.891017 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m17:20:24.891594 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m17:20:24.944085 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.052 seconds
+[0m17:20:24.960144 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.dbt_try.dbt_try-on-run-start-0"
+[0m17:20:24.967676 [info ] [Dummy-1   ]: 1 of 1 START hook: dbt_try.on-run-start.0 ...................................... [RUN]
+[0m17:20:24.968953 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m17:20:24.969728 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "master"} */
+CREATE OR REPLACE FILE FORMAT DBT.ECOMM.ECOMM_STAGE_CUSTOMER
+    TYPE = 'CSV'
+    FIELD_DELIMITER = ','
+    SKIP_HEADER = 1
+    TRIM_SPACE = TRUE
+    EMPTY_FIELD_AS_NULL = TRUE
+[0m17:20:24.970288 [debug] [Dummy-1   ]: Opening a new connection, currently in state init
+[0m17:20:25.380696 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.410 seconds
+[0m17:20:25.382407 [info ] [Dummy-1   ]: 1 of 1 OK hook: dbt_try.on-run-start.0 ......................................... [[32mOK[0m in 0.43s]
+[0m17:20:25.383043 [info ] [Dummy-1   ]: 
+[0m17:20:25.387988 [debug] [Thread-2 (]: Began running node model.dbt_try.mart_ecomm_orders
+[0m17:20:25.388966 [info ] [Thread-2 (]: 1 of 1 START sql table model DBT_PROJECTS_MART.mart_ecomm_orders ............... [RUN]
+[0m17:20:25.389731 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DBT_DBT_PROJECTS_MART, now model.dbt_try.mart_ecomm_orders)
+[0m17:20:25.390305 [debug] [Thread-2 (]: Began compiling node model.dbt_try.mart_ecomm_orders
+[0m17:20:25.396689 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_try.mart_ecomm_orders"
+[0m17:20:25.397608 [debug] [Thread-2 (]: Began executing node model.dbt_try.mart_ecomm_orders
+[0m17:20:25.441587 [debug] [Thread-2 (]: Writing runtime sql for node "model.dbt_try.mart_ecomm_orders"
+[0m17:20:25.443085 [debug] [Thread-2 (]: Using snowflake connection "model.dbt_try.mart_ecomm_orders"
+[0m17:20:25.443755 [debug] [Thread-2 (]: On model.dbt_try.mart_ecomm_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "node_id": "model.dbt_try.mart_ecomm_orders"} */
+create or replace transient table DBT.DBT_PROJECTS_MART.mart_ecomm_orders
+         as
+        (
+
+
+SELECT
+  ORDER_NUM
+, CUSTOMER_ID
+, CAST(AMOUNT AS DECIMAL(10, 2)) AS ORDER_TOTAL_USD
+, SKU
+, ORDER_DATE 
+FROM DBT.ecomm.order_raw
+        );
+[0m17:20:25.444438 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m17:20:26.470038 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.025 seconds
+[0m17:20:26.509405 [info ] [Thread-2 (]: 1 of 1 OK created sql table model DBT_PROJECTS_MART.mart_ecomm_orders .......... [[32mSUCCESS 1[0m in 1.12s]
+[0m17:20:26.510424 [debug] [Thread-2 (]: Finished running node model.dbt_try.mart_ecomm_orders
+[0m17:20:26.513163 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m17:20:26.513719 [debug] [Dummy-1   ]: Connection 'list_DBT' was properly closed.
+[0m17:20:26.514169 [debug] [Dummy-1   ]: Connection 'model.dbt_try.mart_ecomm_orders' was properly closed.
+[0m17:20:26.514670 [info ] [Dummy-1   ]: 
+[0m17:20:26.515215 [info ] [Dummy-1   ]: Finished running 1 project hook, 1 table model in 0 hours 0 minutes and 2.64 seconds (2.64s).
+[0m17:20:26.516359 [debug] [Dummy-1   ]: Command end result
+[0m17:20:26.548044 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m17:20:26.550669 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m17:20:26.558792 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m17:20:26.559421 [info ] [Dummy-1   ]: 
+[0m17:20:26.560177 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m17:20:26.560713 [info ] [Dummy-1   ]: 
+[0m17:20:26.561292 [info ] [Dummy-1   ]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m17:20:26.563431 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 4.6659303, "process_in_blocks": "0", "process_kernel_time": 1.34, "process_mem_max_rss": "438020", "process_out_blocks": "0", "process_user_time": 5.41}
+[0m17:20:26.564178 [debug] [Dummy-1   ]: Command `cli build` succeeded at 17:20:26.563899 after 4.67 seconds
+[0m17:20:26.564778 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 09:21:29.716143 | e36d2f56-0522-46c3-998d-f5bc05544170 ==============================
+[0m09:21:29.716143 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m09:21:29.717230 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/tmp/dbt/logs', 'profiles_dir': '/tmp/dbt/', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt ', 'introspect': 'True', 'target_path': '/tmp/dbt/target/', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m09:21:30.081708 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m09:21:30.804991 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m09:21:30.995088 [info ] [Dummy-1   ]: Unable to do partial parsing because a project config has changed
+[0m09:21:32.873358 [warn ] [Dummy-1   ]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_try.marts.customer
+[0m09:21:33.139220 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m09:21:33.141615 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m09:21:33.217590 [info ] [Dummy-1   ]: Found 1 model, 2 operations, 2 sources, 476 macros
+[0m09:21:33.220320 [info ] [Dummy-1   ]: 
+[0m09:21:33.220938 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m09:21:33.221457 [info ] [Dummy-1   ]: 
+[0m09:21:33.222261 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m09:21:33.224322 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT'
+[0m09:21:33.359676 [debug] [ThreadPool]: Using snowflake connection "list_DBT"
+[0m09:21:33.360334 [debug] [ThreadPool]: On list_DBT: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT"} */
+show terse schemas in database DBT
+    limit 10000
+[0m09:21:33.360848 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:21:33.772483 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.411 seconds
+[0m09:21:33.776752 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_DBT_PROJECTS_MART'
+[0m09:21:33.793787 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m09:21:33.794417 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m09:21:33.794917 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:21:34.213411 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.418 seconds
+[0m09:21:34.220878 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m09:21:34.221576 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+show objects in DBT.DBT_PROJECTS_MART
+    limit 10000
+    
+;
+[0m09:21:34.301421 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.079 seconds
+[0m09:21:34.303999 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m09:21:34.304648 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m09:21:34.365291 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.060 seconds
+[0m09:21:34.379073 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.dbt_try.dbt_try-on-run-start-0"
+[0m09:21:34.386591 [info ] [Dummy-1   ]: 1 of 2 START hook: dbt_try.on-run-start.0 ...................................... [RUN]
+[0m09:21:34.387743 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m09:21:34.388457 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "master"} */
+CREATE OR REPLACE FILE FORMAT DBT.ECOMM.ECOMM_STAGE_CUSTOMER
+    TYPE = 'CSV'
+    FIELD_DELIMITER = ','
+    SKIP_HEADER = 1
+    TRIM_SPACE = TRUE
+    EMPTY_FIELD_AS_NULL = TRUE
+[0m09:21:34.389092 [debug] [Dummy-1   ]: Opening a new connection, currently in state init
+[0m09:21:34.929335 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.540 seconds
+[0m09:21:34.931038 [info ] [Dummy-1   ]: 1 of 2 OK hook: dbt_try.on-run-start.0 ......................................... [[32mOK[0m in 0.56s]
+[0m09:21:34.937518 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m09:21:34.938047 [debug] [Dummy-1   ]: Connection 'list_DBT' was properly closed.
+[0m09:21:34.938750 [debug] [Dummy-1   ]: Connection 'list_DBT_DBT_PROJECTS_MART' was properly closed.
+[0m09:21:34.939336 [info ] [Dummy-1   ]: 
+[0m09:21:34.939862 [info ] [Dummy-1   ]: Finished running 1 project hook in 0 hours 0 minutes and 1.72 seconds (1.72s).
+[0m09:21:34.940683 [error] [Dummy-1   ]: Encountered an error:
+Compilation Error in operation dbt_try-on-run-start-1 (./dbt_project.yml)
+  'sfstage_ecomm_customer' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m09:21:34.942499 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 5.319375, "process_in_blocks": "0", "process_kernel_time": 1.23, "process_mem_max_rss": "480424", "process_out_blocks": "0", "process_user_time": 6.85}
+[0m09:21:34.943192 [debug] [Dummy-1   ]: Command `cli build` failed at 09:21:34.942913 after 5.32 seconds
+[0m09:21:34.943731 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 09:23:07.748008 | ace5f60a-2f2a-4882-bbc1-6886fde2b23d ==============================
+[0m09:23:07.748008 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m09:23:07.749174 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/tmp/dbt/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt ', 'target_path': '/tmp/dbt/target/', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m09:23:08.121898 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m09:23:08.836172 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m09:23:09.021405 [info ] [Dummy-1   ]: Unable to do partial parsing because a project config has changed
+[0m09:23:10.941158 [warn ] [Dummy-1   ]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_try.marts.customer
+[0m09:23:11.217989 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m09:23:11.221024 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m09:23:11.305237 [info ] [Dummy-1   ]: Found 1 model, 2 operations, 2 sources, 476 macros
+[0m09:23:11.308017 [info ] [Dummy-1   ]: 
+[0m09:23:11.308701 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m09:23:11.309205 [info ] [Dummy-1   ]: 
+[0m09:23:11.310020 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m09:23:11.312140 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT'
+[0m09:23:11.441055 [debug] [ThreadPool]: Using snowflake connection "list_DBT"
+[0m09:23:11.441729 [debug] [ThreadPool]: On list_DBT: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT"} */
+show terse schemas in database DBT
+    limit 10000
+[0m09:23:11.442262 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:23:11.782909 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.340 seconds
+[0m09:23:11.787414 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_DBT_PROJECTS_MART'
+[0m09:23:11.804797 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m09:23:11.805498 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m09:23:11.806033 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:23:12.140324 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.334 seconds
+[0m09:23:12.147755 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m09:23:12.148579 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+show objects in DBT.DBT_PROJECTS_MART
+    limit 10000
+    
+;
+[0m09:23:12.237573 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.088 seconds
+[0m09:23:12.240261 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m09:23:12.240932 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m09:23:12.292527 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.051 seconds
+[0m09:23:12.306486 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.dbt_try.dbt_try-on-run-start-0"
+[0m09:23:12.314434 [info ] [Dummy-1   ]: 1 of 2 START hook: dbt_try.on-run-start.0 ...................................... [RUN]
+[0m09:23:12.315647 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m09:23:12.316284 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "master"} */
+CREATE OR REPLACE FILE FORMAT DBT.ECOMM.ECOMM_STAGE_CUSTOMER
+    TYPE = 'CSV'
+    FIELD_DELIMITER = ','
+    SKIP_HEADER = 1
+    TRIM_SPACE = TRUE
+    EMPTY_FIELD_AS_NULL = TRUE
+[0m09:23:12.316842 [debug] [Dummy-1   ]: Opening a new connection, currently in state init
+[0m09:23:12.751331 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.434 seconds
+[0m09:23:12.753062 [info ] [Dummy-1   ]: 1 of 2 OK hook: dbt_try.on-run-start.0 ......................................... [[32mOK[0m in 0.46s]
+[0m09:23:12.759782 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m09:23:12.760334 [debug] [Dummy-1   ]: Connection 'list_DBT' was properly closed.
+[0m09:23:12.761020 [debug] [Dummy-1   ]: Connection 'list_DBT_DBT_PROJECTS_MART' was properly closed.
+[0m09:23:12.761625 [info ] [Dummy-1   ]: 
+[0m09:23:12.762146 [info ] [Dummy-1   ]: Finished running 1 project hook in 0 hours 0 minutes and 1.45 seconds (1.45s).
+[0m09:23:12.762970 [error] [Dummy-1   ]: Encountered an error:
+Compilation Error in operation dbt_try-on-run-start-1 (./dbt_project.yml)
+  'sfstage_ecomm_customer' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m09:23:12.764791 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 5.1127906, "process_in_blocks": "0", "process_kernel_time": 1.28, "process_mem_max_rss": "481008", "process_out_blocks": "0", "process_user_time": 6.85}
+[0m09:23:12.765523 [debug] [Dummy-1   ]: Command `cli build` failed at 09:23:12.765229 after 5.11 seconds
+[0m09:23:12.766082 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 09:25:28.778848 | 95a8bbb6-57b5-4c36-8fcc-46ad40080869 ==============================
+[0m09:25:28.778848 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m09:25:28.779956 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'debug': 'False', 'warn_error': 'None', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': '/tmp/dbt/target/', 'static_parser': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m09:25:29.146908 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m09:25:29.900172 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m09:25:30.072737 [info ] [Dummy-1   ]: Unable to do partial parsing because a project config has changed
+[0m09:25:31.979068 [warn ] [Dummy-1   ]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_try.marts.customer
+[0m09:25:32.247936 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m09:25:32.250560 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m09:25:32.328069 [info ] [Dummy-1   ]: Found 1 model, 2 operations, 2 sources, 476 macros
+[0m09:25:32.330913 [info ] [Dummy-1   ]: 
+[0m09:25:32.331537 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m09:25:32.332010 [info ] [Dummy-1   ]: 
+[0m09:25:32.332879 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m09:25:32.335050 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT'
+[0m09:25:32.466407 [debug] [ThreadPool]: Using snowflake connection "list_DBT"
+[0m09:25:32.467134 [debug] [ThreadPool]: On list_DBT: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT"} */
+show terse schemas in database DBT
+    limit 10000
+[0m09:25:32.467680 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:25:32.916956 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.449 seconds
+[0m09:25:32.921530 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_DBT_PROJECTS_MART'
+[0m09:25:32.939174 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m09:25:32.939841 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m09:25:32.940392 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:25:33.347367 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.407 seconds
+[0m09:25:33.354523 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m09:25:33.355183 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+show objects in DBT.DBT_PROJECTS_MART
+    limit 10000
+    
+;
+[0m09:25:33.452693 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.097 seconds
+[0m09:25:33.455174 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m09:25:33.455745 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m09:25:33.528552 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.072 seconds
+[0m09:25:33.542102 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.dbt_try.dbt_try-on-run-start-0"
+[0m09:25:33.549795 [info ] [Dummy-1   ]: 1 of 2 START hook: dbt_try.on-run-start.0 ...................................... [RUN]
+[0m09:25:33.550962 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m09:25:33.551581 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "master"} */
+CREATE OR REPLACE FILE FORMAT DBT.ECOMM.ECOMM_STAGE_CUSTOMER
+    TYPE = 'CSV'
+    FIELD_DELIMITER = ','
+    SKIP_HEADER = 1
+    TRIM_SPACE = TRUE
+    EMPTY_FIELD_AS_NULL = TRUE
+[0m09:25:33.552155 [debug] [Dummy-1   ]: Opening a new connection, currently in state init
+[0m09:25:34.088118 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.536 seconds
+[0m09:25:34.089920 [info ] [Dummy-1   ]: 1 of 2 OK hook: dbt_try.on-run-start.0 ......................................... [[32mOK[0m in 0.56s]
+[0m09:25:34.095656 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.dbt_try.dbt_try-on-run-start-1"
+[0m09:25:34.096762 [info ] [Dummy-1   ]: 2 of 2 START hook: dbt_try.on-run-start.1 ...................................... [RUN]
+[0m09:25:34.097722 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m09:25:34.098299 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "master"} */
+CREATE OR REPLACE STAGE DBT.ECOMM.ECOMM_STAGE_CUSTOMER
+  FILE_FORMAT = DBT.ECOMM.ECOMM_STAGE_CUSTOMER;
+[0m09:25:34.243909 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.145 seconds
+[0m09:25:34.245591 [info ] [Dummy-1   ]: 2 of 2 OK hook: dbt_try.on-run-start.1 ......................................... [[32mOK[0m in 0.15s]
+[0m09:25:34.246201 [info ] [Dummy-1   ]: 
+[0m09:25:34.250733 [debug] [Thread-2 (]: Began running node model.dbt_try.mart_ecomm_orders
+[0m09:25:34.251619 [info ] [Thread-2 (]: 1 of 1 START sql table model DBT_PROJECTS_MART.mart_ecomm_orders ............... [RUN]
+[0m09:25:34.252392 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DBT_DBT_PROJECTS_MART, now model.dbt_try.mart_ecomm_orders)
+[0m09:25:34.252984 [debug] [Thread-2 (]: Began compiling node model.dbt_try.mart_ecomm_orders
+[0m09:25:34.259368 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_try.mart_ecomm_orders"
+[0m09:25:34.260175 [debug] [Thread-2 (]: Began executing node model.dbt_try.mart_ecomm_orders
+[0m09:25:34.306324 [debug] [Thread-2 (]: Writing runtime sql for node "model.dbt_try.mart_ecomm_orders"
+[0m09:25:34.307783 [debug] [Thread-2 (]: Using snowflake connection "model.dbt_try.mart_ecomm_orders"
+[0m09:25:34.308475 [debug] [Thread-2 (]: On model.dbt_try.mart_ecomm_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "node_id": "model.dbt_try.mart_ecomm_orders"} */
+create or replace transient table DBT.DBT_PROJECTS_MART.mart_ecomm_orders
+         as
+        (
+
+
+SELECT
+  ORDER_NUM
+, CUSTOMER_ID
+, CAST(AMOUNT AS DECIMAL(10, 2)) AS ORDER_TOTAL_USD
+, SKU
+, ORDER_DATE 
+FROM DBT.ecomm.order_raw
+        );
+[0m09:25:34.309092 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m09:25:36.263990 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.955 seconds
+[0m09:25:36.302392 [info ] [Thread-2 (]: 1 of 1 OK created sql table model DBT_PROJECTS_MART.mart_ecomm_orders .......... [[32mSUCCESS 1[0m in 2.05s]
+[0m09:25:36.303350 [debug] [Thread-2 (]: Finished running node model.dbt_try.mart_ecomm_orders
+[0m09:25:36.305983 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m09:25:36.306509 [debug] [Dummy-1   ]: Connection 'list_DBT' was properly closed.
+[0m09:25:36.306995 [debug] [Dummy-1   ]: Connection 'model.dbt_try.mart_ecomm_orders' was properly closed.
+[0m09:25:36.307598 [info ] [Dummy-1   ]: 
+[0m09:25:36.308126 [info ] [Dummy-1   ]: Finished running 2 project hooks, 1 table model in 0 hours 0 minutes and 3.97 seconds (3.97s).
+[0m09:25:36.309496 [debug] [Dummy-1   ]: Command end result
+[0m09:25:36.338635 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m09:25:36.341048 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m09:25:36.348764 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m09:25:36.349338 [info ] [Dummy-1   ]: 
+[0m09:25:36.349996 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m09:25:36.350482 [info ] [Dummy-1   ]: 
+[0m09:25:36.350995 [info ] [Dummy-1   ]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m09:25:36.352798 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 7.6686907, "process_in_blocks": "0", "process_kernel_time": 1.3, "process_mem_max_rss": "483640", "process_out_blocks": "0", "process_user_time": 7.02}
+[0m09:25:36.353492 [debug] [Dummy-1   ]: Command `cli build` succeeded at 09:25:36.353215 after 7.67 seconds
+[0m09:25:36.354048 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 09:26:17.996546 | c9408254-e968-42e8-84dc-311aca9a5d8c ==============================
+[0m09:26:17.996546 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m09:26:17.997661 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt ', 'target_path': '/tmp/dbt/target/', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m09:26:18.361469 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m09:26:19.103349 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m09:26:19.360123 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m09:26:19.360925 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m09:26:19.370050 [warn ] [Dummy-1   ]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_try.marts.customer
+[0m09:26:19.649490 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m09:26:19.652294 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m09:26:19.697737 [info ] [Dummy-1   ]: Found 1 model, 2 operations, 2 sources, 476 macros
+[0m09:26:19.700359 [info ] [Dummy-1   ]: 
+[0m09:26:19.701005 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m09:26:19.701610 [info ] [Dummy-1   ]: 
+[0m09:26:19.702519 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m09:26:19.704560 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_DBT_PROJECTS_MART'
+[0m09:26:19.853448 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m09:26:19.854182 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m09:26:19.854736 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:26:20.191927 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.337 seconds
+[0m09:26:20.197823 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m09:26:20.198633 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+show objects in DBT.DBT_PROJECTS_MART
+    limit 10000
+    
+;
+[0m09:26:20.300921 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.102 seconds
+[0m09:26:20.303638 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m09:26:20.304330 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m09:26:20.348856 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.044 seconds
+[0m09:26:20.374211 [debug] [Thread-2 (]: Began running node model.dbt_try.mart_ecomm_orders
+[0m09:26:20.375734 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DBT_DBT_PROJECTS_MART, now model.dbt_try.mart_ecomm_orders)
+[0m09:26:20.376505 [debug] [Thread-2 (]: Began compiling node model.dbt_try.mart_ecomm_orders
+[0m09:26:20.389165 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_try.mart_ecomm_orders"
+[0m09:26:20.390204 [debug] [Thread-2 (]: Began executing node model.dbt_try.mart_ecomm_orders
+[0m09:26:20.391251 [debug] [Thread-2 (]: Finished running node model.dbt_try.mart_ecomm_orders
+[0m09:26:20.392012 [debug] [Thread-2 (]: Began running node operation.dbt_try.dbt_try-on-run-start-0
+[0m09:26:20.392940 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dbt_try.mart_ecomm_orders, now operation.dbt_try.dbt_try-on-run-start-0)
+[0m09:26:20.393569 [debug] [Thread-2 (]: Began compiling node operation.dbt_try.dbt_try-on-run-start-0
+[0m09:26:20.401110 [debug] [Thread-2 (]: Writing injected SQL for node "operation.dbt_try.dbt_try-on-run-start-0"
+[0m09:26:20.402139 [debug] [Thread-2 (]: Began executing node operation.dbt_try.dbt_try-on-run-start-0
+[0m09:26:20.403238 [debug] [Thread-2 (]: Finished running node operation.dbt_try.dbt_try-on-run-start-0
+[0m09:26:20.403945 [debug] [Thread-2 (]: Began running node operation.dbt_try.dbt_try-on-run-start-1
+[0m09:26:20.404842 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly operation.dbt_try.dbt_try-on-run-start-0, now operation.dbt_try.dbt_try-on-run-start-1)
+[0m09:26:20.405485 [debug] [Thread-2 (]: Began compiling node operation.dbt_try.dbt_try-on-run-start-1
+[0m09:26:20.411974 [debug] [Thread-2 (]: Writing injected SQL for node "operation.dbt_try.dbt_try-on-run-start-1"
+[0m09:26:20.412955 [debug] [Thread-2 (]: Began executing node operation.dbt_try.dbt_try-on-run-start-1
+[0m09:26:20.413995 [debug] [Thread-2 (]: Finished running node operation.dbt_try.dbt_try-on-run-start-1
+[0m09:26:20.418720 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m09:26:20.419438 [debug] [Dummy-1   ]: Connection 'operation.dbt_try.dbt_try-on-run-start-1' was properly closed.
+[0m09:26:20.420751 [debug] [Dummy-1   ]: Command end result
+[0m09:26:20.454586 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m09:26:20.457111 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m09:26:20.466328 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m09:26:20.468540 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 2.566545, "process_in_blocks": "0", "process_kernel_time": 1.2, "process_mem_max_rss": "429724", "process_out_blocks": "0", "process_user_time": 5.18}
+[0m09:26:20.469367 [debug] [Dummy-1   ]: Command `cli compile` succeeded at 09:26:20.469049 after 2.57 seconds
+[0m09:26:20.470020 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 09:33:46.323543 | aef86c99-e015-4ff4-8886-f332262405f4 ==============================
+[0m09:33:46.323543 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m09:33:46.324596 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/tmp/dbt/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': '/tmp/dbt/target/', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'False'}
+[0m09:33:46.684985 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m09:33:47.435710 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m09:33:47.701013 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m09:33:47.701747 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m09:33:47.710304 [warn ] [Dummy-1   ]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_try.marts.customer
+[0m09:33:47.988515 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m09:33:47.991261 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m09:33:48.045109 [info ] [Dummy-1   ]: Found 1 model, 2 operations, 2 sources, 476 macros
+[0m09:33:48.047531 [info ] [Dummy-1   ]: 
+[0m09:33:48.048175 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m09:33:48.048943 [info ] [Dummy-1   ]: 
+[0m09:33:48.049828 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m09:33:48.051686 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT'
+[0m09:33:48.191450 [debug] [ThreadPool]: Using snowflake connection "list_DBT"
+[0m09:33:48.192101 [debug] [ThreadPool]: On list_DBT: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT"} */
+show terse schemas in database DBT
+    limit 10000
+[0m09:33:48.192624 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:33:48.590630 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.398 seconds
+[0m09:33:48.594892 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_DBT_PROJECTS_MART'
+[0m09:33:48.611840 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m09:33:48.612547 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m09:33:48.613182 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:33:48.939093 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.326 seconds
+[0m09:33:48.944819 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m09:33:48.945500 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+show objects in DBT.DBT_PROJECTS_MART
+    limit 10000
+    
+;
+[0m09:33:49.009528 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.063 seconds
+[0m09:33:49.012189 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m09:33:49.012783 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m09:33:49.057293 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.044 seconds
+[0m09:33:49.072249 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.dbt_try.dbt_try-on-run-start-0"
+[0m09:33:49.079846 [info ] [Dummy-1   ]: 1 of 2 START hook: dbt_try.on-run-start.0 ...................................... [RUN]
+[0m09:33:49.081016 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m09:33:49.081753 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "master"} */
+CREATE OR REPLACE FILE FORMAT DBT.ECOMM.ECOMM_STAGE_CUSTOMER
+    TYPE = 'CSV'
+    FIELD_DELIMITER = ','
+    SKIP_HEADER = 1
+    TRIM_SPACE = TRUE
+    EMPTY_FIELD_AS_NULL = TRUE
+[0m09:33:49.082434 [debug] [Dummy-1   ]: Opening a new connection, currently in state init
+[0m09:33:49.569485 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.487 seconds
+[0m09:33:49.571156 [info ] [Dummy-1   ]: 1 of 2 OK hook: dbt_try.on-run-start.0 ......................................... [[32mOK[0m in 0.51s]
+[0m09:33:49.577859 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.dbt_try.dbt_try-on-run-start-1"
+[0m09:33:49.579035 [info ] [Dummy-1   ]: 2 of 2 START hook: dbt_try.on-run-start.1 ...................................... [RUN]
+[0m09:33:49.579973 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m09:33:49.580535 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "master"} */
+CREATE OR REPLACE STAGE DBT.ECOMM.ECOMM_STAGE_CUSTOMER
+  FILE_FORMAT = DBT.ECOMM.ECOMM_STAGE_CUSTOMER;
+[0m09:33:49.666798 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.085 seconds
+[0m09:33:49.668488 [info ] [Dummy-1   ]: 2 of 2 OK hook: dbt_try.on-run-start.1 ......................................... [[32mOK[0m in 0.10s]
+[0m09:33:49.669144 [info ] [Dummy-1   ]: 
+[0m09:33:49.674857 [debug] [Thread-2 (]: Began running node model.dbt_try.mart_ecomm_orders
+[0m09:33:49.675823 [info ] [Thread-2 (]: 1 of 1 START sql table model DBT_PROJECTS_MART.mart_ecomm_orders ............... [RUN]
+[0m09:33:49.676650 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DBT_DBT_PROJECTS_MART, now model.dbt_try.mart_ecomm_orders)
+[0m09:33:49.677284 [debug] [Thread-2 (]: Began compiling node model.dbt_try.mart_ecomm_orders
+[0m09:33:49.684090 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_try.mart_ecomm_orders"
+[0m09:33:49.685127 [debug] [Thread-2 (]: Began executing node model.dbt_try.mart_ecomm_orders
+[0m09:33:49.734132 [debug] [Thread-2 (]: Writing runtime sql for node "model.dbt_try.mart_ecomm_orders"
+[0m09:33:49.735622 [debug] [Thread-2 (]: Using snowflake connection "model.dbt_try.mart_ecomm_orders"
+[0m09:33:49.736256 [debug] [Thread-2 (]: On model.dbt_try.mart_ecomm_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "node_id": "model.dbt_try.mart_ecomm_orders"} */
+create or replace transient table DBT.DBT_PROJECTS_MART.mart_ecomm_orders
+         as
+        (
+
+
+SELECT
+  ORDER_NUM
+, CUSTOMER_ID
+, CAST(AMOUNT AS DECIMAL(10, 2)) AS ORDER_TOTAL_USD
+, SKU
+, ORDER_DATE 
+FROM DBT.ecomm.order_raw
+        );
+[0m09:33:49.736836 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m09:33:50.599288 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.862 seconds
+[0m09:33:50.638312 [info ] [Thread-2 (]: 1 of 1 OK created sql table model DBT_PROJECTS_MART.mart_ecomm_orders .......... [[32mSUCCESS 1[0m in 0.96s]
+[0m09:33:50.639381 [debug] [Thread-2 (]: Finished running node model.dbt_try.mart_ecomm_orders
+[0m09:33:50.642723 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m09:33:50.643252 [debug] [Dummy-1   ]: Connection 'list_DBT' was properly closed.
+[0m09:33:50.643698 [debug] [Dummy-1   ]: Connection 'model.dbt_try.mart_ecomm_orders' was properly closed.
+[0m09:33:50.644289 [info ] [Dummy-1   ]: 
+[0m09:33:50.644881 [info ] [Dummy-1   ]: Finished running 2 project hooks, 1 table model in 0 hours 0 minutes and 2.59 seconds (2.59s).
+[0m09:33:50.646210 [debug] [Dummy-1   ]: Command end result
+[0m09:33:50.676844 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m09:33:50.679487 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m09:33:50.687384 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m09:33:50.688006 [info ] [Dummy-1   ]: 
+[0m09:33:50.688799 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m09:33:50.689368 [info ] [Dummy-1   ]: 
+[0m09:33:50.689930 [info ] [Dummy-1   ]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m09:33:50.691869 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.4617696, "process_in_blocks": "0", "process_kernel_time": 1.29, "process_mem_max_rss": "437132", "process_out_blocks": "0", "process_user_time": 5.36}
+[0m09:33:50.692590 [debug] [Dummy-1   ]: Command `cli run` succeeded at 09:33:50.692315 after 4.46 seconds
+[0m09:33:50.693246 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 16:27:37.795604 | 4630cadb-83ad-4134-8e5e-24f075280999 ==============================
+[0m16:27:37.795604 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m16:27:37.796929 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/tmp/dbt/logs', 'profiles_dir': '/tmp/dbt/', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'static_parser': 'True', 'introspect': 'True', 'target_path': '/tmp/dbt/target/', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m16:27:38.223680 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m16:27:39.065347 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m16:27:39.344290 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m16:27:39.345418 [debug] [Dummy-1   ]: Partial parsing: added file: dbt_try://macros/load_from_stage_ecomm_customer.sql
+[0m16:27:39.624788 [warn ] [Dummy-1   ]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_try.marts.customer
+[0m16:27:39.778733 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m16:27:39.782272 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m16:27:39.874872 [info ] [Dummy-1   ]: Found 1 model, 2 operations, 2 sources, 477 macros
+[0m16:27:39.879148 [info ] [Dummy-1   ]: 
+[0m16:27:39.879901 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m16:27:39.880450 [info ] [Dummy-1   ]: 
+[0m16:27:39.881554 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m16:27:39.884263 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT'
+[0m16:27:40.041686 [debug] [ThreadPool]: Using snowflake connection "list_DBT"
+[0m16:27:40.042534 [debug] [ThreadPool]: On list_DBT: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT"} */
+show terse schemas in database DBT
+    limit 10000
+[0m16:27:40.043248 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:27:40.523291 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.480 seconds
+[0m16:27:40.528485 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_DBT_PROJECTS_MART'
+[0m16:27:40.547986 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m16:27:40.548875 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m16:27:40.549483 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:27:40.978688 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.429 seconds
+[0m16:27:40.985619 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m16:27:40.986548 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+show objects in DBT.DBT_PROJECTS_MART
+    limit 10000
+    
+;
+[0m16:27:41.073136 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.086 seconds
+[0m16:27:41.076371 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DBT_PROJECTS_MART"
+[0m16:27:41.077118 [debug] [ThreadPool]: On list_DBT_DBT_PROJECTS_MART: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "list_DBT_DBT_PROJECTS_MART"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m16:27:41.140019 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.062 seconds
+[0m16:27:41.159446 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.dbt_try.dbt_try-on-run-start-0"
+[0m16:27:41.169068 [info ] [Dummy-1   ]: 1 of 2 START hook: dbt_try.on-run-start.0 ...................................... [RUN]
+[0m16:27:41.170499 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m16:27:41.171279 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "master"} */
+CREATE OR REPLACE FILE FORMAT DBT.ECOMM.ECOMM_STAGE_CUSTOMER
+    TYPE = 'CSV'
+    FIELD_DELIMITER = ','
+    SKIP_HEADER = 1
+    TRIM_SPACE = TRUE
+    EMPTY_FIELD_AS_NULL = TRUE
+[0m16:27:41.171973 [debug] [Dummy-1   ]: Opening a new connection, currently in state init
+[0m16:27:41.630984 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.459 seconds
+[0m16:27:41.633048 [info ] [Dummy-1   ]: 1 of 2 OK hook: dbt_try.on-run-start.0 ......................................... [[32mOK[0m in 0.49s]
+[0m16:27:41.641288 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.dbt_try.dbt_try-on-run-start-1"
+[0m16:27:41.642985 [info ] [Dummy-1   ]: 2 of 2 START hook: dbt_try.on-run-start.1 ...................................... [RUN]
+[0m16:27:41.644238 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m16:27:41.644973 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "connection_name": "master"} */
+CREATE OR REPLACE STAGE DBT.ECOMM.ECOMM_STAGE_CUSTOMER
+  FILE_FORMAT = DBT.ECOMM.ECOMM_STAGE_CUSTOMER;
+[0m16:27:41.788213 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.142 seconds
+[0m16:27:41.790312 [info ] [Dummy-1   ]: 2 of 2 OK hook: dbt_try.on-run-start.1 ......................................... [[32mOK[0m in 0.16s]
+[0m16:27:41.791045 [info ] [Dummy-1   ]: 
+[0m16:27:41.797304 [debug] [Thread-2 (]: Began running node model.dbt_try.mart_ecomm_orders
+[0m16:27:41.798595 [info ] [Thread-2 (]: 1 of 1 START sql table model DBT_PROJECTS_MART.mart_ecomm_orders ............... [RUN]
+[0m16:27:41.799657 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DBT_DBT_PROJECTS_MART, now model.dbt_try.mart_ecomm_orders)
+[0m16:27:41.800423 [debug] [Thread-2 (]: Began compiling node model.dbt_try.mart_ecomm_orders
+[0m16:27:41.808253 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_try.mart_ecomm_orders"
+[0m16:27:41.809372 [debug] [Thread-2 (]: Began executing node model.dbt_try.mart_ecomm_orders
+[0m16:27:41.858483 [debug] [Thread-2 (]: Writing runtime sql for node "model.dbt_try.mart_ecomm_orders"
+[0m16:27:41.860349 [debug] [Thread-2 (]: Using snowflake connection "model.dbt_try.mart_ecomm_orders"
+[0m16:27:41.861100 [debug] [Thread-2 (]: On model.dbt_try.mart_ecomm_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_try", "target_name": "dev", "node_id": "model.dbt_try.mart_ecomm_orders"} */
+create or replace transient table DBT.DBT_PROJECTS_MART.mart_ecomm_orders
+         as
+        (
+
+
+SELECT
+  ORDER_NUM
+, CUSTOMER_ID
+, CAST(AMOUNT AS DECIMAL(10, 2)) AS ORDER_TOTAL_USD
+, SKU
+, ORDER_DATE 
+FROM DBT.ecomm.order_raw
+        );
+[0m16:27:41.861760 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m16:27:43.045723 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.184 seconds
+[0m16:27:43.093917 [info ] [Thread-2 (]: 1 of 1 OK created sql table model DBT_PROJECTS_MART.mart_ecomm_orders .......... [[32mSUCCESS 1[0m in 1.29s]
+[0m16:27:43.095123 [debug] [Thread-2 (]: Finished running node model.dbt_try.mart_ecomm_orders
+[0m16:27:43.099548 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m16:27:43.100194 [debug] [Dummy-1   ]: Connection 'list_DBT' was properly closed.
+[0m16:27:43.100781 [debug] [Dummy-1   ]: Connection 'model.dbt_try.mart_ecomm_orders' was properly closed.
+[0m16:27:43.101514 [info ] [Dummy-1   ]: 
+[0m16:27:43.102191 [info ] [Dummy-1   ]: Finished running 2 project hooks, 1 table model in 0 hours 0 minutes and 3.22 seconds (3.22s).
+[0m16:27:43.103727 [debug] [Dummy-1   ]: Command end result
+[0m16:27:43.136091 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m16:27:43.139523 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m16:27:43.148983 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m16:27:43.149681 [info ] [Dummy-1   ]: 
+[0m16:27:43.150472 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m16:27:43.151080 [info ] [Dummy-1   ]: 
+[0m16:27:43.151795 [info ] [Dummy-1   ]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m16:27:43.169818 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 5.4836297, "process_in_blocks": "0", "process_kernel_time": 1.33, "process_mem_max_rss": "436028", "process_out_blocks": "0", "process_user_time": 6.42}
+[0m16:27:43.170755 [debug] [Dummy-1   ]: Command `cli build` succeeded at 16:27:43.170411 after 5.49 seconds
+[0m16:27:43.171514 [debug] [Dummy-1   ]: Flushing usage events
