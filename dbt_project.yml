@@ -1,34 +1,18 @@
-# Project
-name: dbt_try
-version: "1.0"
+name: 'analytics_project'
+version: '1.0.0'
 config-version: 2
-profile: dbt_try
+profile: analytics_project
 
-vars:
-  file_format_name: 'ff_ecomm_customer'
-
-## Sources
-model-paths: [models]
-analysis-paths: [analysis]
-test-paths: [tests]
-seed-paths: [seeds]
-macro-paths: [macros]
-snapshot-paths: [snapshots]
-
-on-run-start:
-  - "{{ ff_stage_ecomm_customer ('DBT.ECOMM.ECOMM_STAGE_CUSTOMER')}}"
-  - "{{ sfstage_stage_ecomm_customer ('DBT.ECOMM.ECOMM_STAGE_CUSTOMER')}}"
-
-## Target
-## target-path: scripts
-## clean-targets: [scripts, dbt_modules]
+model-paths: ["models"]
 
 models:
-  dbt_try: # this matches the `name:`` config
-    +materialized: view 
-    marts:
-      +materialized: table      
-      customer:
-        +schema: customer     
-
-        
+  analytics_project:
+    silver:
+      +materialized: table
+      +schema: silver
+      +tags: ["silver"]
+    gold:
+      +materialized: dynamic_table
+      +schema: gold
+      +snowflake_warehouse: COMPUTE_WH  # Replace with your warehouse name
+      +target_lag: '5 minutes'

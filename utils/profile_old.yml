@@ -1,0 +1,11 @@
+dbt_try:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: 'not needed'
+      user: 'not needed'
+      role: accountadmin
+      database: DBT
+      schema: DBT_PROJECTS
+      warehouse: COMPUTE_WH
