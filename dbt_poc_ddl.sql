@@ -34,6 +34,14 @@ INSERT INTO ANALYTICS_DB.BRONZE.RAW_CUSTOMERS VALUES
 ('CUST003', 'Charlie Brown', NULL, '2025-03-20');
 ('CUST003', 'Charlie Brown', NULL, '2025-03-20');
 
+INSERT INTO ANALYTICS_DB.BRONZE.RAW_CUSTOMERS VALUES
+('CUST004', 'JD Vance', 'alice@example.com', '2024-01-01'),
+('CUST005', 'Bob the Gmail', 'bob@gmai.com', '2023-02-15'),
+('CUST006', 'Hamalla Karris', 'stupid@bitch.com', '2023-03-20'),
+('CUST007', 'N the N', 'n@n.com','2025-03-20');
+
+
+
 INSERT INTO ANALYTICS_DB.BRONZE.RAW_ORDERS VALUES
 ('ORD007', 'CUST001', '2025-12-15', '100.50', 'completed'),
 ('ORD008', 'CUST002', '2025-12-15', '200', 'completed'),
@@ -55,10 +63,19 @@ INSERT INTO ANALYTICS_DB.BRONZE.RAW_ORDERS VALUES
 ('ORD020', 'CUST003', '2025-12-17', '300.00', 'completed'),
 ('ORD021', 'CUST002', '2025-12-17', '330.00', 'completed');
 
+INSERT INTO ANALYTICS_DB.BRONZE.RAW_ORDERS VALUES
+('ORD022', 'CUST004', '2025-12-14', '100.99', 'completed'),
+('ORD023', 'CUST005', '2025-12-14', '199.99', 'completed'),
+('ORD024', 'CUST006', '2025-12-14', '140.75', 'pending'),
+('ORD025', 'CUST007', '2025-12-17', '15000.00', 'completed'),
+('ORD026', 'CUST0042', '2025-12-17', '11.33', 'completed');
 
 
 
 
 select * from ANALYTICS_DB.GOLD.DAILY_SALES_SUMMARY
 
-ALTER DYNAMIC TABLE ANALYTICS_DB.GOLD.DAILY_SALES_SUMMARY REFRESH;
+---ALTER DYNAMIC TABLE ANALYTICS_DB.GOLD.DAILY_SALES_SUMMARY REFRESH;
+
+---this plus 5 minute lag in the dbt_project table refreshes the GOLD dynamic table
+EXECUTE DBT PROJECT ANALYTICS_DB.SILVER.ANALYTICS_SILVER ARGS = 'run --select stg_orders stg_customers';

@@ -15100,3 +15100,96 @@ alter dynamic table "ANALYTICS_DB"."GOLD"."DAILY_SALES_SUMMARY" set
 [0m17:20:40.212541 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 5.0914345, "process_in_blocks": "0", "process_kernel_time": 1.07, "process_mem_max_rss": "459888", "process_out_blocks": "0", "process_user_time": 5.35}
 [0m17:20:40.213233 [debug] [Dummy-1   ]: Command `cli run` succeeded at 17:20:40.212967 after 5.09 seconds
 [0m17:20:40.213837 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 05:57:39.036396 | b9191d5c-42f7-4162-b7fd-09b0127c69a2 ==============================
+[0m05:57:39.036396 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m05:57:39.037628 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/tmp/dbt/', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m05:57:39.112234 [error] [Dummy-1   ]:  adapter: Invalid profile: 'user' is a required property.
+[0m05:57:39.414346 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m05:57:40.167048 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m05:57:40.324567 [info ] [Dummy-1   ]: Unable to do partial parsing because a project config has changed
+[0m05:57:40.412898 [error] [Dummy-1   ]: Encountered an error:
+Compilation Error
+  unexpected '}'
+    line 10
+      {% do run_query("{{ dbt.run_model(model) }}") }}  {# Internal helper for operations #}
+[0m05:57:40.414989 [debug] [Dummy-1   ]: Resource report: {"command_name": "run-operation", "command_success": false, "command_wall_clock_time": 1.4760984, "process_in_blocks": "0", "process_kernel_time": 1.01, "process_mem_max_rss": "412464", "process_out_blocks": "0", "process_user_time": 4.77}
+[0m05:57:40.415795 [debug] [Dummy-1   ]: Command `cli run-operation` failed at 05:57:40.415498 after 1.48 seconds
+[0m05:57:40.416520 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 05:58:21.862929 | 234e2fdf-20f3-41eb-80df-2a236b612de7 ==============================
+[0m05:58:21.862929 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m05:58:21.864204 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'profiles_dir': '/tmp/dbt/', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m05:58:21.940822 [error] [Dummy-1   ]:  adapter: Invalid profile: 'user' is a required property.
+[0m05:58:22.246626 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m05:58:22.989150 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m05:58:23.175643 [info ] [Dummy-1   ]: Unable to do partial parsing because a project config has changed
+[0m05:58:23.265193 [error] [Dummy-1   ]: Encountered an error:
+Compilation Error
+  unexpected '}'
+    line 10
+      {% do run_query("{{ dbt.run_model(model) }}") }}
+[0m05:58:23.267488 [debug] [Dummy-1   ]: Resource report: {"command_name": "run-operation", "command_success": false, "command_wall_clock_time": 1.5047498, "process_in_blocks": "0", "process_kernel_time": 0.97, "process_mem_max_rss": "405104", "process_out_blocks": "0", "process_user_time": 4.82}
+[0m05:58:23.268302 [debug] [Dummy-1   ]: Command `cli run-operation` failed at 05:58:23.267998 after 1.51 seconds
+[0m05:58:23.269249 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 06:56:39.934572 | 3297eb11-ef73-45f9-b3c4-3f36460f1ad1 ==============================
+[0m06:56:39.934572 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m06:56:39.935848 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/tmp/dbt/logs', 'profiles_dir': '/tmp/dbt/', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m06:56:40.016503 [error] [Dummy-1   ]:  adapter: Invalid profile: 'user' is a required property.
+[0m06:56:40.339611 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m06:56:41.101534 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m06:56:41.282375 [info ] [Dummy-1   ]: Unable to do partial parsing because a project config has changed
+[0m06:56:43.217114 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m06:56:43.220052 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m06:56:43.253896 [info ] [Dummy-1   ]: Found 3 models, 2 sources, 478 macros
+[0m06:56:43.255017 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'macro_run_silver_layer'
+[0m06:56:43.255917 [error] [Dummy-1   ]: Encountered an error while running operation: Runtime Error
+  dbt could not find a macro with the name "run_silver_layer" in any package
+[0m06:56:43.257519 [debug] [Dummy-1   ]: Traceback (most recent call last):
+  File "/usr/lib/python_udf/7572a8db11e712fed6beb756e6c14cdfd320d48237f422b7a5b1ae764f1db134/lib/python3.11/site-packages/dbt/task/run_operation.py", line 67, in run
+    self._run_unsafe(package_name, macro_name)
+  File "/usr/lib/python_udf/7572a8db11e712fed6beb756e6c14cdfd320d48237f422b7a5b1ae764f1db134/lib/python3.11/site-packages/dbt/task/run_operation.py", line 48, in _run_unsafe
+    res = adapter.execute_macro(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/7572a8db11e712fed6beb756e6c14cdfd320d48237f422b7a5b1ae764f1db134/lib/python3.11/site-packages/dbt/adapters/base/impl.py", line 1260, in execute_macro
+    raise DbtRuntimeError(
+dbt_common.exceptions.base.DbtRuntimeError: Runtime Error
+  dbt could not find a macro with the name "run_silver_layer" in any package
+
+[0m06:56:43.258366 [error] [Dummy-1   ]: Encountered an error:
+Internal Error
+  dbt could not find a macro with the name 'run_silver_layer' in any package
+[0m06:56:43.260303 [debug] [Dummy-1   ]: Resource report: {"command_name": "run-operation", "command_success": false, "command_wall_clock_time": 3.4299357, "process_in_blocks": "0", "process_kernel_time": 1.21, "process_mem_max_rss": "466940", "process_out_blocks": "0", "process_user_time": 6.75}
+[0m06:56:43.261087 [debug] [Dummy-1   ]: Command `cli run-operation` failed at 06:56:43.260788 after 3.43 seconds
+[0m06:56:43.261707 [debug] [Dummy-1   ]: Connection 'macro_run_silver_layer' was properly closed.
+[0m06:56:43.262247 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 06:59:57.431091 | f7ce8212-5407-49fd-97e5-f84cd9731dbc ==============================
+[0m06:59:57.431091 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m06:59:57.432395 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/tmp/dbt/', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m06:59:57.517403 [error] [Dummy-1   ]:  adapter: Invalid profile: 'user' is a required property.
+[0m06:59:57.855212 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m06:59:58.631372 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m06:59:58.882322 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m06:59:58.883378 [debug] [Dummy-1   ]: Partial parsing: updated file: analytics_project://macros/run_silver_layer.sql
+[0m06:59:59.294352 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m06:59:59.297727 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m06:59:59.335383 [info ] [Dummy-1   ]: Found 3 models, 2 sources, 479 macros
+[0m06:59:59.336646 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'macro_run_silver_layer'
+[0m06:59:59.347432 [info ] [Dummy-1   ]: Silver layer operation macro executed successfully!
+[0m06:59:59.348370 [info ] [Dummy-1   ]: This macro cannot run models directly—dbt operations are for utilities only.
+[0m06:59:59.349110 [info ] [Dummy-1   ]: To update silver layer:
+[0m06:59:59.349749 [info ] [Dummy-1   ]: 1. Temporarily comment out the 'gold' block in dbt_project.yml
+[0m06:59:59.350362 [info ] [Dummy-1   ]: 2. Use the 'Run' command in UI (only silver models will build)
+[0m06:59:59.350907 [info ] [Dummy-1   ]: 3. Re-enable gold block
+[0m06:59:59.351452 [info ] [Dummy-1   ]: 4. Manually refresh gold: ALTER DYNAMIC TABLE ANALYTICS_DB.GOLD.DAILY_SALES_SUMMARY REFRESH;
+[0m06:59:59.362406 [debug] [Dummy-1   ]: Wrote artifact RunResultsArtifact to /tmp/dbt/target/run_results.json
+[0m06:59:59.364889 [debug] [Dummy-1   ]: Resource report: {"command_name": "run-operation", "command_success": true, "command_wall_clock_time": 2.0431626, "process_in_blocks": "0", "process_kernel_time": 1.09, "process_mem_max_rss": "410976", "process_out_blocks": "0", "process_user_time": 5.58}
+[0m06:59:59.365841 [debug] [Dummy-1   ]: Command `cli run-operation` succeeded at 06:59:59.365486 after 2.04 seconds
+[0m06:59:59.366532 [debug] [Dummy-1   ]: Connection 'macro_run_silver_layer' was properly closed.
+[0m06:59:59.367178 [debug] [Dummy-1   ]: Flushing usage events
