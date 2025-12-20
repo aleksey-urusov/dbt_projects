@@ -8,11 +8,13 @@ model-paths: ["models"]
 models:
   analytics_project:
     silver:
-      +materialized: table
+      +materialized: dynamic_table
       +schema: silver
+      +target_lag: '1 minutes'
+      +snowflake_warehouse: COMPUTE_WH
       +tags: ["silver"]
     gold:
       +materialized: dynamic_table
       +schema: gold
-      +snowflake_warehouse: COMPUTE_WH  # Replace with your warehouse name
+      +snowflake_warehouse: COMPUTE_WH
       +target_lag: '5 minutes'

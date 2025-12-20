@@ -15193,3 +15193,1880 @@ Internal Error
 [0m06:59:59.365841 [debug] [Dummy-1   ]: Command `cli run-operation` succeeded at 06:59:59.365486 after 2.04 seconds
 [0m06:59:59.366532 [debug] [Dummy-1   ]: Connection 'macro_run_silver_layer' was properly closed.
 [0m06:59:59.367178 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 04:38:53.192901 | b78eac71-30cb-46d8-8c4b-b8aa2c17cb69 ==============================
+[0m04:38:53.192901 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m04:38:53.193983 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/tmp/dbt/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': '/tmp/dbt/target/', 'static_parser': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m04:38:53.265312 [error] [Dummy-1   ]:  adapter: Invalid profile: 'user' is a required property.
+[0m04:38:53.553357 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m04:38:54.306328 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m04:38:54.545641 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m04:38:54.546637 [debug] [Dummy-1   ]: Partial parsing: updated file: analytics_project://models/silver/stg_orders.sql
+[0m04:38:54.547304 [debug] [Dummy-1   ]: Partial parsing: updated file: analytics_project://models/gold/daily_sales_summary.sql
+[0m04:38:55.220454 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m04:38:55.223455 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m04:38:55.302331 [info ] [Dummy-1   ]: Found 3 models, 2 sources, 479 macros
+[0m04:38:55.305174 [info ] [Dummy-1   ]: 
+[0m04:38:55.305758 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m04:38:55.306216 [info ] [Dummy-1   ]: 
+[0m04:38:55.307000 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m04:38:55.314365 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB'
+[0m04:38:55.315757 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB'
+[0m04:38:55.467442 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB"
+[0m04:38:55.468186 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB"
+[0m04:38:55.468856 [debug] [ThreadPool]: On list_ANALYTICS_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB"} */
+show terse schemas in database ANALYTICS_DB
+    limit 10000
+[0m04:38:55.469389 [debug] [ThreadPool]: On list_ANALYTICS_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB"} */
+show terse schemas in database ANALYTICS_DB
+    limit 10000
+[0m04:38:55.469898 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:38:55.470374 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:38:55.839606 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.369 seconds
+[0m04:38:55.843453 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.373 seconds
+[0m04:38:55.848757 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB_silver'
+[0m04:38:55.869323 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB, now list_ANALYTICS_DB_gold)
+[0m04:38:55.886741 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m04:38:55.893424 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m04:38:55.894052 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m04:38:55.894671 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m04:38:55.895240 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:38:55.895890 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:38:56.269685 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.374 seconds
+[0m04:38:56.275362 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m04:38:56.276424 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+show objects in ANALYTICS_DB.silver
+    limit 10000
+    
+;
+[0m04:38:56.285956 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.390 seconds
+[0m04:38:56.288292 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m04:38:56.288988 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+show objects in ANALYTICS_DB.gold
+    limit 10000
+    
+;
+[0m04:38:56.334561 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.057 seconds
+[0m04:38:56.337104 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m04:38:56.337724 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m04:38:56.354798 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.065 seconds
+[0m04:38:56.357381 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m04:38:56.357985 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m04:38:56.389262 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.051 seconds
+[0m04:38:56.414510 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.056 seconds
+[0m04:38:56.423244 [debug] [Thread-2 (]: Began running node model.analytics_project.stg_customers
+[0m04:38:56.423926 [debug] [Thread-3 (]: Began running node model.analytics_project.stg_orders
+[0m04:38:56.424825 [info ] [Thread-2 (]: 1 of 3 START sql table model silver.stg_customers .............................. [RUN]
+[0m04:38:56.425624 [info ] [Thread-3 (]: 2 of 3 START sql table model silver.stg_orders ................................. [RUN]
+[0m04:38:56.426360 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB_gold, now model.analytics_project.stg_customers)
+[0m04:38:56.426966 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB_silver, now model.analytics_project.stg_orders)
+[0m04:38:56.427531 [debug] [Thread-2 (]: Began compiling node model.analytics_project.stg_customers
+[0m04:38:56.428082 [debug] [Thread-3 (]: Began compiling node model.analytics_project.stg_orders
+[0m04:38:56.440163 [debug] [Thread-2 (]: Writing injected SQL for node "model.analytics_project.stg_customers"
+[0m04:38:56.446093 [debug] [Thread-3 (]: Writing injected SQL for node "model.analytics_project.stg_orders"
+[0m04:38:56.447256 [debug] [Thread-2 (]: Began executing node model.analytics_project.stg_customers
+[0m04:38:56.447892 [debug] [Thread-3 (]: Began executing node model.analytics_project.stg_orders
+[0m04:38:56.510522 [debug] [Thread-2 (]: Writing runtime sql for node "model.analytics_project.stg_customers"
+[0m04:38:56.516428 [debug] [Thread-3 (]: Writing runtime sql for node "model.analytics_project.stg_orders"
+[0m04:38:56.518894 [debug] [Thread-2 (]: Using snowflake connection "model.analytics_project.stg_customers"
+[0m04:38:56.519878 [debug] [Thread-2 (]: On model.analytics_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_customers"} */
+create or replace transient table ANALYTICS_DB.silver.stg_customers
+         as
+        (
+
+SELECT
+    CUSTOMER_ID,
+    CUSTOMER_NAME,
+    CASE 
+        WHEN EMAIL LIKE '%@%.%' THEN EMAIL 
+        ELSE NULL 
+    END AS EMAIL,
+    TO_DATE(SIGNUP_DATE, 'YYYY-MM-DD') AS SIGNUP_DATE
+FROM ANALYTICS_DB.bronze.raw_customers
+        );
+[0m04:38:56.521061 [debug] [Thread-3 (]: Using snowflake connection "model.analytics_project.stg_orders"
+[0m04:38:56.521668 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m04:38:56.522409 [debug] [Thread-3 (]: On model.analytics_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_orders"} */
+create or replace transient table ANALYTICS_DB.silver.stg_orders
+         as
+        (
+
+SELECT
+    ORDER_ID,
+    CUSTOMER_ID,
+    TO_DATE(ORDER_DATE, 'YYYY-MM-DD') AS ORDER_DATE,
+    CAST(NULLIF(AMOUNT, '') AS NUMBER) AS AMOUNT,
+    UPPER(STATUS) AS STATUS
+FROM ANALYTICS_DB.bronze.raw_orders
+WHERE ORDER_ID IS NOT NULL
+        );
+[0m04:38:56.523445 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m04:38:57.532776 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.011 seconds
+[0m04:38:57.533728 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 1.010 seconds
+[0m04:38:57.571166 [info ] [Thread-2 (]: 1 of 3 OK created sql table model silver.stg_customers ......................... [[32mSUCCESS 1[0m in 1.14s]
+[0m04:38:57.572153 [info ] [Thread-3 (]: 2 of 3 OK created sql table model silver.stg_orders ............................ [[32mSUCCESS 1[0m in 1.14s]
+[0m04:38:57.573155 [debug] [Thread-2 (]: Finished running node model.analytics_project.stg_customers
+[0m04:38:57.574027 [debug] [Thread-3 (]: Finished running node model.analytics_project.stg_orders
+[0m04:38:57.575645 [debug] [Thread-5 (]: Began running node model.analytics_project.daily_sales_summary
+[0m04:38:57.577847 [info ] [Thread-5 (]: 3 of 3 START sql dynamic_table model gold.daily_sales_summary .................. [RUN]
+[0m04:38:57.578892 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.analytics_project.daily_sales_summary'
+[0m04:38:57.579528 [debug] [Thread-5 (]: Began compiling node model.analytics_project.daily_sales_summary
+[0m04:38:57.586260 [debug] [Thread-5 (]: Writing injected SQL for node "model.analytics_project.daily_sales_summary"
+[0m04:38:57.587127 [debug] [Thread-5 (]: Began executing node model.analytics_project.daily_sales_summary
+[0m04:38:57.619033 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m04:38:57.619768 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m04:38:57.620377 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m04:38:57.991668 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.371 seconds
+[0m04:38:57.992513 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m04:38:57.993140 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+show dynamic tables
+            like 'DAILY_SALES_SUMMARY'
+            in schema ANALYTICS_DB.GOLD
+        ;
+[0m04:38:58.097751 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.104 seconds
+[0m04:38:58.098571 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m04:38:58.099199 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+select
+            "name",
+            "schema_name",
+            "database_name",
+            "text",
+            "target_lag",
+            "warehouse",
+            "refresh_mode"
+        from table(result_scan(last_query_id()))
+[0m04:38:58.477649 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.378 seconds
+[0m04:38:58.485368 [debug] [Thread-5 (]: Applying ALTER to: "ANALYTICS_DB"."GOLD"."DAILY_SALES_SUMMARY"
+[0m04:38:58.488186 [debug] [Thread-5 (]: Applying REPLACE to: "ANALYTICS_DB"."GOLD"."DAILY_SALES_SUMMARY"
+[0m04:38:58.505822 [debug] [Thread-5 (]: Writing runtime sql for node "model.analytics_project.daily_sales_summary"
+[0m04:38:58.507840 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m04:38:58.508606 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+create or replace dynamic table ANALYTICS_DB.gold.daily_sales_summary
+        target_lag = '5 minutes'
+        warehouse = COMPUTE_WH
+        refresh_mode = INCREMENTAL
+
+        initialize = ON_CREATE
+
+        as (
+            
+
+SELECT
+    o.ORDER_DATE,
+    COUNT(DISTINCT o.ORDER_ID) AS TOTAL_ORDERS,
+    COUNT(DISTINCT o.CUSTOMER_ID) AS UNIQUE_CUSTOMERS,
+    SUM(o.AMOUNT) AS TOTAL_SALES_AMOUNT,
+    AVG(o.AMOUNT) AS AVG_ORDER_AMOUNT
+FROM ANALYTICS_DB.silver.stg_orders o
+JOIN ANALYTICS_DB.silver.stg_customers c ON o.CUSTOMER_ID = c.CUSTOMER_ID
+WHERE o.STATUS = 'COMPLETED'
+  AND o.AMOUNT IS NOT NULL
+GROUP BY o.ORDER_DATE
+ORDER BY o.ORDER_DATE DESC
+        )
+[0m04:38:59.957105 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 1.448 seconds
+[0m04:38:59.960681 [info ] [Thread-5 (]: 3 of 3 OK created sql dynamic_table model gold.daily_sales_summary ............. [[32mSUCCESS 1[0m in 2.38s]
+[0m04:38:59.961664 [debug] [Thread-5 (]: Finished running node model.analytics_project.daily_sales_summary
+[0m04:38:59.964917 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m04:38:59.965707 [debug] [Dummy-1   ]: Connection 'model.analytics_project.stg_customers' was properly closed.
+[0m04:38:59.966187 [debug] [Dummy-1   ]: Connection 'list_ANALYTICS_DB' was properly closed.
+[0m04:38:59.966626 [debug] [Dummy-1   ]: Connection 'model.analytics_project.stg_orders' was properly closed.
+[0m04:38:59.967056 [debug] [Dummy-1   ]: Connection 'model.analytics_project.daily_sales_summary' was properly closed.
+[0m04:38:59.967633 [info ] [Dummy-1   ]: 
+[0m04:38:59.968164 [info ] [Dummy-1   ]: Finished running 1 dynamic table model, 2 table models in 0 hours 0 minutes and 4.66 seconds (4.66s).
+[0m04:38:59.969546 [debug] [Dummy-1   ]: Command end result
+[0m04:38:59.998648 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m04:39:00.001392 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m04:39:00.009569 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m04:39:00.010109 [info ] [Dummy-1   ]: 
+[0m04:39:00.010761 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m04:39:00.011241 [info ] [Dummy-1   ]: 
+[0m04:39:00.011757 [info ] [Dummy-1   ]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m04:39:00.013645 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 6.9148126, "process_in_blocks": "0", "process_kernel_time": 1.27, "process_mem_max_rss": "507396", "process_out_blocks": "0", "process_user_time": 5.88}
+[0m04:39:00.014346 [debug] [Dummy-1   ]: Command `cli build` succeeded at 04:39:00.014076 after 6.92 seconds
+[0m04:39:00.014893 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 05:12:40.108083 | f83f365b-5f35-4fb6-a0e6-e9f87492cae7 ==============================
+[0m05:12:40.108083 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m05:12:40.109287 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/tmp/dbt/', 'log_path': '/tmp/dbt/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'False'}
+[0m05:12:40.183019 [error] [Dummy-1   ]:  adapter: Invalid profile: 'user' is a required property.
+[0m05:12:40.479879 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m05:12:41.266084 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m05:12:41.512898 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m05:12:41.513596 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m05:12:41.795207 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m05:12:41.798023 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m05:12:41.831284 [info ] [Dummy-1   ]: Found 3 models, 2 sources, 479 macros
+[0m05:12:41.832406 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'macro_daily_sales_summary'
+[0m05:12:41.833263 [error] [Dummy-1   ]: Encountered an error while running operation: Runtime Error
+  dbt could not find a macro with the name "daily_sales_summary" in any package
+[0m05:12:41.835117 [debug] [Dummy-1   ]: Traceback (most recent call last):
+  File "/usr/lib/python_udf/7572a8db11e712fed6beb756e6c14cdfd320d48237f422b7a5b1ae764f1db134/lib/python3.11/site-packages/dbt/task/run_operation.py", line 67, in run
+    self._run_unsafe(package_name, macro_name)
+  File "/usr/lib/python_udf/7572a8db11e712fed6beb756e6c14cdfd320d48237f422b7a5b1ae764f1db134/lib/python3.11/site-packages/dbt/task/run_operation.py", line 48, in _run_unsafe
+    res = adapter.execute_macro(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/7572a8db11e712fed6beb756e6c14cdfd320d48237f422b7a5b1ae764f1db134/lib/python3.11/site-packages/dbt/adapters/base/impl.py", line 1260, in execute_macro
+    raise DbtRuntimeError(
+dbt_common.exceptions.base.DbtRuntimeError: Runtime Error
+  dbt could not find a macro with the name "daily_sales_summary" in any package
+
+[0m05:12:41.835828 [error] [Dummy-1   ]: Encountered an error:
+Internal Error
+  dbt could not find a macro with the name 'daily_sales_summary' in any package
+[0m05:12:41.837872 [debug] [Dummy-1   ]: Resource report: {"command_name": "run-operation", "command_success": false, "command_wall_clock_time": 1.8273821, "process_in_blocks": "0", "process_kernel_time": 1.15, "process_mem_max_rss": "407900", "process_out_blocks": "0", "process_user_time": 4.93}
+[0m05:12:41.838775 [debug] [Dummy-1   ]: Command `cli run-operation` failed at 05:12:41.838457 after 1.83 seconds
+[0m05:12:41.839404 [debug] [Dummy-1   ]: Connection 'macro_daily_sales_summary' was properly closed.
+[0m05:12:41.840005 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 05:17:59.896026 | 7109f815-e313-43c0-bff5-5b0cad82d2ee ==============================
+[0m05:17:59.896026 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m05:17:59.897170 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'profiles_dir': '/tmp/dbt/', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'target_path': '/tmp/dbt/target/', 'introspect': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m05:17:59.970774 [error] [Dummy-1   ]:  adapter: Invalid profile: 'user' is a required property.
+[0m05:18:00.263396 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m05:18:01.038656 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m05:18:01.284922 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m05:18:01.285643 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m05:18:01.578789 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m05:18:01.581805 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m05:18:01.638287 [info ] [Dummy-1   ]: Found 3 models, 2 sources, 479 macros
+[0m05:18:01.641058 [info ] [Dummy-1   ]: 
+[0m05:18:01.641699 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m05:18:01.642179 [info ] [Dummy-1   ]: 
+[0m05:18:01.643025 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m05:18:01.650673 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB'
+[0m05:18:01.652288 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB'
+[0m05:18:01.778903 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB"
+[0m05:18:01.779725 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB"
+[0m05:18:01.780425 [debug] [ThreadPool]: On list_ANALYTICS_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB"} */
+show terse schemas in database ANALYTICS_DB
+    limit 10000
+[0m05:18:01.780996 [debug] [ThreadPool]: On list_ANALYTICS_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB"} */
+show terse schemas in database ANALYTICS_DB
+    limit 10000
+[0m05:18:01.781505 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:18:01.782034 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:18:02.115059 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.333 seconds
+[0m05:18:02.116029 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.334 seconds
+[0m05:18:02.122683 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB_silver'
+[0m05:18:02.123917 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB, now list_ANALYTICS_DB_gold)
+[0m05:18:02.142391 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m05:18:02.147163 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m05:18:02.147822 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m05:18:02.148567 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m05:18:02.149240 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:18:02.149805 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:18:02.924378 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.775 seconds
+[0m05:18:02.930487 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m05:18:02.931122 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+show objects in ANALYTICS_DB.silver
+    limit 10000
+    
+;
+[0m05:18:02.932952 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.783 seconds
+[0m05:18:02.935248 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m05:18:02.935803 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+show objects in ANALYTICS_DB.gold
+    limit 10000
+    
+;
+[0m05:18:02.985230 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.053 seconds
+[0m05:18:02.987815 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m05:18:02.988592 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m05:18:02.990666 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.054 seconds
+[0m05:18:02.993105 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m05:18:02.993725 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m05:18:03.035344 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.046 seconds
+[0m05:18:03.038134 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.044 seconds
+[0m05:18:03.047919 [debug] [Thread-2 (]: Began running node model.analytics_project.stg_customers
+[0m05:18:03.048766 [debug] [Thread-3 (]: Began running node model.analytics_project.stg_orders
+[0m05:18:03.049700 [info ] [Thread-2 (]: 1 of 3 START sql table model silver.stg_customers .............................. [RUN]
+[0m05:18:03.050506 [info ] [Thread-3 (]: 2 of 3 START sql table model silver.stg_orders ................................. [RUN]
+[0m05:18:03.051291 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB_silver, now model.analytics_project.stg_customers)
+[0m05:18:03.052446 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB_gold, now model.analytics_project.stg_orders)
+[0m05:18:03.053106 [debug] [Thread-2 (]: Began compiling node model.analytics_project.stg_customers
+[0m05:18:03.053711 [debug] [Thread-3 (]: Began compiling node model.analytics_project.stg_orders
+[0m05:18:03.065542 [debug] [Thread-2 (]: Writing injected SQL for node "model.analytics_project.stg_customers"
+[0m05:18:03.071884 [debug] [Thread-3 (]: Writing injected SQL for node "model.analytics_project.stg_orders"
+[0m05:18:03.073036 [debug] [Thread-2 (]: Began executing node model.analytics_project.stg_customers
+[0m05:18:03.085272 [debug] [Thread-3 (]: Began executing node model.analytics_project.stg_orders
+[0m05:18:03.137870 [debug] [Thread-2 (]: Writing runtime sql for node "model.analytics_project.stg_customers"
+[0m05:18:03.145027 [debug] [Thread-3 (]: Writing runtime sql for node "model.analytics_project.stg_orders"
+[0m05:18:03.146940 [debug] [Thread-2 (]: Using snowflake connection "model.analytics_project.stg_customers"
+[0m05:18:03.147923 [debug] [Thread-2 (]: On model.analytics_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_customers"} */
+create or replace transient table ANALYTICS_DB.silver.stg_customers
+         as
+        (
+
+SELECT
+    CUSTOMER_ID,
+    CUSTOMER_NAME,
+    CASE 
+        WHEN EMAIL LIKE '%@%.%' THEN EMAIL 
+        ELSE NULL 
+    END AS EMAIL,
+    TO_DATE(SIGNUP_DATE, 'YYYY-MM-DD') AS SIGNUP_DATE
+FROM ANALYTICS_DB.bronze.raw_customers
+        );
+[0m05:18:03.149280 [debug] [Thread-3 (]: Using snowflake connection "model.analytics_project.stg_orders"
+[0m05:18:03.149965 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m05:18:03.150677 [debug] [Thread-3 (]: On model.analytics_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_orders"} */
+create or replace transient table ANALYTICS_DB.silver.stg_orders
+         as
+        (
+
+SELECT
+    ORDER_ID,
+    CUSTOMER_ID,
+    TO_DATE(ORDER_DATE, 'YYYY-MM-DD') AS ORDER_DATE,
+    CAST(NULLIF(AMOUNT, '') AS NUMBER) AS AMOUNT,
+    UPPER(STATUS) AS STATUS
+FROM ANALYTICS_DB.bronze.raw_orders
+WHERE ORDER_ID IS NOT NULL
+        );
+[0m05:18:03.151667 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m05:18:04.008000 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.858 seconds
+[0m05:18:04.035571 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.884 seconds
+[0m05:18:04.046950 [info ] [Thread-2 (]: 1 of 3 OK created sql table model silver.stg_customers ......................... [[32mSUCCESS 1[0m in 0.99s]
+[0m05:18:04.047935 [info ] [Thread-3 (]: 2 of 3 OK created sql table model silver.stg_orders ............................ [[32mSUCCESS 1[0m in 0.99s]
+[0m05:18:04.049038 [debug] [Thread-2 (]: Finished running node model.analytics_project.stg_customers
+[0m05:18:04.049916 [debug] [Thread-3 (]: Finished running node model.analytics_project.stg_orders
+[0m05:18:04.051550 [debug] [Thread-5 (]: Began running node model.analytics_project.daily_sales_summary
+[0m05:18:04.052750 [info ] [Thread-5 (]: 3 of 3 START sql dynamic_table model gold.daily_sales_summary .................. [RUN]
+[0m05:18:04.053666 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.analytics_project.daily_sales_summary'
+[0m05:18:04.054265 [debug] [Thread-5 (]: Began compiling node model.analytics_project.daily_sales_summary
+[0m05:18:04.061200 [debug] [Thread-5 (]: Writing injected SQL for node "model.analytics_project.daily_sales_summary"
+[0m05:18:04.062123 [debug] [Thread-5 (]: Began executing node model.analytics_project.daily_sales_summary
+[0m05:18:04.095584 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m05:18:04.096337 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m05:18:04.096925 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m05:18:04.416431 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.319 seconds
+[0m05:18:04.417268 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m05:18:04.417922 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+show dynamic tables
+            like 'DAILY_SALES_SUMMARY'
+            in schema ANALYTICS_DB.GOLD
+        ;
+[0m05:18:04.509303 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.091 seconds
+[0m05:18:04.510083 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m05:18:04.510765 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+select
+            "name",
+            "schema_name",
+            "database_name",
+            "text",
+            "target_lag",
+            "warehouse",
+            "refresh_mode"
+        from table(result_scan(last_query_id()))
+[0m05:18:04.892903 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.381 seconds
+[0m05:18:04.895791 [warn ] [Thread-5 (]: No configuration changes were identified on: `ANALYTICS_DB.gold.daily_sales_summary`. Continuing.
+[0m05:18:04.900866 [info ] [Thread-5 (]: 3 of 3 OK created sql dynamic_table model gold.daily_sales_summary ............. [[32mskip ANALYTICS_DB.gold.daily_sales_summary[0m in 0.85s]
+[0m05:18:04.901814 [debug] [Thread-5 (]: Finished running node model.analytics_project.daily_sales_summary
+[0m05:18:04.904976 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m05:18:04.905696 [debug] [Dummy-1   ]: Connection 'list_ANALYTICS_DB' was properly closed.
+[0m05:18:04.906187 [debug] [Dummy-1   ]: Connection 'model.analytics_project.stg_orders' was properly closed.
+[0m05:18:04.906634 [debug] [Dummy-1   ]: Connection 'model.analytics_project.stg_customers' was properly closed.
+[0m05:18:04.907068 [debug] [Dummy-1   ]: Connection 'model.analytics_project.daily_sales_summary' was properly closed.
+[0m05:18:04.907655 [info ] [Dummy-1   ]: 
+[0m05:18:04.908201 [info ] [Dummy-1   ]: Finished running 1 dynamic table model, 2 table models in 0 hours 0 minutes and 3.26 seconds (3.26s).
+[0m05:18:04.909602 [debug] [Dummy-1   ]: Command end result
+[0m05:18:04.940199 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m05:18:04.942774 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m05:18:04.951051 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m05:18:04.951629 [info ] [Dummy-1   ]: 
+[0m05:18:04.952331 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m05:18:04.952841 [info ] [Dummy-1   ]: 
+[0m05:18:04.953367 [info ] [Dummy-1   ]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m05:18:04.955245 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 5.155177, "process_in_blocks": "0", "process_kernel_time": 1.21, "process_mem_max_rss": "452676", "process_out_blocks": "0", "process_user_time": 5.58}
+[0m05:18:04.955955 [debug] [Dummy-1   ]: Command `cli run` succeeded at 05:18:04.955675 after 5.16 seconds
+[0m05:18:04.956582 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 05:37:37.848156 | df7d65e2-588f-409b-a0e9-cf3010b2c254 ==============================
+[0m05:37:37.848156 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m05:37:37.849434 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/tmp/dbt/logs', 'profiles_dir': '/tmp/dbt/', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt ', 'target_path': '/tmp/dbt/target/', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m05:37:37.925063 [error] [Dummy-1   ]:  adapter: Invalid profile: 'user' is a required property.
+[0m05:37:38.222899 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m05:37:38.943342 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m05:37:39.113769 [info ] [Dummy-1   ]: Unable to do partial parsing because a project config has changed
+[0m05:37:40.928308 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m05:37:40.930970 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m05:37:40.987062 [info ] [Dummy-1   ]: Found 3 models, 2 sources, 479 macros
+[0m05:37:40.989646 [info ] [Dummy-1   ]: 
+[0m05:37:40.990269 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m05:37:40.990769 [info ] [Dummy-1   ]: 
+[0m05:37:40.991656 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m05:37:40.999210 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB'
+[0m05:37:41.000659 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB'
+[0m05:37:41.156104 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB"
+[0m05:37:41.156889 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB"
+[0m05:37:41.157550 [debug] [ThreadPool]: On list_ANALYTICS_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB"} */
+show terse schemas in database ANALYTICS_DB
+    limit 10000
+[0m05:37:41.158148 [debug] [ThreadPool]: On list_ANALYTICS_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB"} */
+show terse schemas in database ANALYTICS_DB
+    limit 10000
+[0m05:37:41.158716 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:37:41.159198 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:37:41.482952 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.324 seconds
+[0m05:37:41.484176 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.325 seconds
+[0m05:37:41.509853 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB_gold'
+[0m05:37:41.511128 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB, now list_ANALYTICS_DB_silver)
+[0m05:37:41.528475 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m05:37:41.533407 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m05:37:41.534118 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m05:37:41.534687 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m05:37:41.535198 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:37:41.535682 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:37:41.894596 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.359 seconds
+[0m05:37:41.895419 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.360 seconds
+[0m05:37:41.901486 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m05:37:41.903791 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m05:37:41.904415 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+show objects in ANALYTICS_DB.silver
+    limit 10000
+    
+;
+[0m05:37:41.904966 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+show objects in ANALYTICS_DB.gold
+    limit 10000
+    
+;
+[0m05:37:41.978196 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.072 seconds
+[0m05:37:41.979265 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.074 seconds
+[0m05:37:41.981787 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m05:37:41.984230 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m05:37:41.984856 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m05:37:41.985397 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m05:37:42.038529 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.052 seconds
+[0m05:37:42.039463 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.053 seconds
+[0m05:37:42.051939 [debug] [Thread-2 (]: Began running node model.analytics_project.stg_customers
+[0m05:37:42.052673 [debug] [Thread-3 (]: Began running node model.analytics_project.stg_orders
+[0m05:37:42.053716 [info ] [Thread-2 (]: 1 of 3 START sql table model silver.stg_customers .............................. [RUN]
+[0m05:37:42.054586 [info ] [Thread-3 (]: 2 of 3 START sql table model silver.stg_orders ................................. [RUN]
+[0m05:37:42.055439 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB_gold, now model.analytics_project.stg_customers)
+[0m05:37:42.056563 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB_silver, now model.analytics_project.stg_orders)
+[0m05:37:42.057222 [debug] [Thread-2 (]: Began compiling node model.analytics_project.stg_customers
+[0m05:37:42.057823 [debug] [Thread-3 (]: Began compiling node model.analytics_project.stg_orders
+[0m05:37:42.069786 [debug] [Thread-2 (]: Writing injected SQL for node "model.analytics_project.stg_customers"
+[0m05:37:42.079291 [debug] [Thread-3 (]: Writing injected SQL for node "model.analytics_project.stg_orders"
+[0m05:37:42.080784 [debug] [Thread-2 (]: Began executing node model.analytics_project.stg_customers
+[0m05:37:42.210388 [debug] [Thread-3 (]: Began executing node model.analytics_project.stg_orders
+[0m05:37:42.305519 [debug] [Thread-2 (]: Writing runtime sql for node "model.analytics_project.stg_customers"
+[0m05:37:42.306474 [debug] [Thread-3 (]: Writing runtime sql for node "model.analytics_project.stg_orders"
+[0m05:37:42.308193 [debug] [Thread-2 (]: Using snowflake connection "model.analytics_project.stg_customers"
+[0m05:37:42.308945 [debug] [Thread-2 (]: On model.analytics_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_customers"} */
+create or replace transient table ANALYTICS_DB.silver.stg_customers
+         as
+        (
+
+SELECT
+    CUSTOMER_ID,
+    CUSTOMER_NAME,
+    CASE 
+        WHEN EMAIL LIKE '%@%.%' THEN EMAIL 
+        ELSE NULL 
+    END AS EMAIL,
+    TO_DATE(SIGNUP_DATE, 'YYYY-MM-DD') AS SIGNUP_DATE
+FROM ANALYTICS_DB.bronze.raw_customers
+        );
+[0m05:37:42.310196 [debug] [Thread-3 (]: Using snowflake connection "model.analytics_project.stg_orders"
+[0m05:37:42.310790 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m05:37:42.311431 [debug] [Thread-3 (]: On model.analytics_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_orders"} */
+create or replace transient table ANALYTICS_DB.silver.stg_orders
+         as
+        (
+
+SELECT
+    ORDER_ID,
+    CUSTOMER_ID,
+    TO_DATE(ORDER_DATE, 'YYYY-MM-DD') AS ORDER_DATE,
+    CAST(NULLIF(AMOUNT, '') AS NUMBER) AS AMOUNT,
+    UPPER(STATUS) AS STATUS
+FROM ANALYTICS_DB.bronze.raw_orders
+WHERE ORDER_ID IS NOT NULL
+        );
+[0m05:37:42.312366 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m05:37:43.228489 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.917 seconds
+[0m05:37:43.263600 [info ] [Thread-2 (]: 1 of 3 OK created sql table model silver.stg_customers ......................... [[32mSUCCESS 1[0m in 1.21s]
+[0m05:37:43.264626 [debug] [Thread-2 (]: Finished running node model.analytics_project.stg_customers
+[0m05:37:43.304565 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.992 seconds
+[0m05:37:43.308177 [info ] [Thread-3 (]: 2 of 3 OK created sql table model silver.stg_orders ............................ [[32mSUCCESS 1[0m in 1.25s]
+[0m05:37:43.309176 [debug] [Thread-3 (]: Finished running node model.analytics_project.stg_orders
+[0m05:37:43.310707 [debug] [Thread-5 (]: Began running node model.analytics_project.daily_sales_summary
+[0m05:37:43.311774 [info ] [Thread-5 (]: 3 of 3 START sql dynamic_table model gold.daily_sales_summary .................. [RUN]
+[0m05:37:43.312668 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.analytics_project.daily_sales_summary'
+[0m05:37:43.313252 [debug] [Thread-5 (]: Began compiling node model.analytics_project.daily_sales_summary
+[0m05:37:43.320182 [debug] [Thread-5 (]: Writing injected SQL for node "model.analytics_project.daily_sales_summary"
+[0m05:37:43.321094 [debug] [Thread-5 (]: Began executing node model.analytics_project.daily_sales_summary
+[0m05:37:43.355439 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m05:37:43.356162 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m05:37:43.356749 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m05:37:43.675388 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.318 seconds
+[0m05:37:43.676198 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m05:37:43.676813 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+show dynamic tables
+            like 'DAILY_SALES_SUMMARY'
+            in schema ANALYTICS_DB.GOLD
+        ;
+[0m05:37:43.752259 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.075 seconds
+[0m05:37:43.753033 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m05:37:43.753679 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+select
+            "name",
+            "schema_name",
+            "database_name",
+            "text",
+            "target_lag",
+            "warehouse",
+            "refresh_mode"
+        from table(result_scan(last_query_id()))
+[0m05:37:44.062694 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.308 seconds
+[0m05:37:44.065613 [warn ] [Thread-5 (]: No configuration changes were identified on: `ANALYTICS_DB.gold.daily_sales_summary`. Continuing.
+[0m05:37:44.070757 [info ] [Thread-5 (]: 3 of 3 OK created sql dynamic_table model gold.daily_sales_summary ............. [[32mskip ANALYTICS_DB.gold.daily_sales_summary[0m in 0.76s]
+[0m05:37:44.071718 [debug] [Thread-5 (]: Finished running node model.analytics_project.daily_sales_summary
+[0m05:37:44.074897 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m05:37:44.075487 [debug] [Dummy-1   ]: Connection 'list_ANALYTICS_DB' was properly closed.
+[0m05:37:44.075942 [debug] [Dummy-1   ]: Connection 'model.analytics_project.stg_orders' was properly closed.
+[0m05:37:44.076377 [debug] [Dummy-1   ]: Connection 'model.analytics_project.stg_customers' was properly closed.
+[0m05:37:44.076845 [debug] [Dummy-1   ]: Connection 'model.analytics_project.daily_sales_summary' was properly closed.
+[0m05:37:44.077435 [info ] [Dummy-1   ]: 
+[0m05:37:44.077990 [info ] [Dummy-1   ]: Finished running 1 dynamic table model, 2 table models in 0 hours 0 minutes and 3.09 seconds (3.09s).
+[0m05:37:44.079343 [debug] [Dummy-1   ]: Command end result
+[0m05:37:44.108873 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m05:37:44.111497 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m05:37:44.119372 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m05:37:44.119931 [info ] [Dummy-1   ]: 
+[0m05:37:44.120603 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m05:37:44.121090 [info ] [Dummy-1   ]: 
+[0m05:37:44.121624 [info ] [Dummy-1   ]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m05:37:44.123492 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 6.373355, "process_in_blocks": "0", "process_kernel_time": 1.27, "process_mem_max_rss": "513360", "process_out_blocks": "0", "process_user_time": 7.2}
+[0m05:37:44.124183 [debug] [Dummy-1   ]: Command `cli run` succeeded at 05:37:44.123912 after 6.37 seconds
+[0m05:37:44.124736 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 05:38:15.890964 | af86c12b-a41f-4c5d-96f8-52d05d378a83 ==============================
+[0m05:38:15.890964 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m05:38:15.892119 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'version_check': 'True', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': '/tmp/dbt/target/', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'False'}
+[0m05:38:15.966372 [error] [Dummy-1   ]:  adapter: Invalid profile: 'user' is a required property.
+[0m05:38:16.266636 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m05:38:17.071030 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m05:38:17.314990 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m05:38:17.315729 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m05:38:17.580626 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m05:38:17.583492 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m05:38:17.668803 [info ] [Dummy-1   ]: Found 3 models, 2 sources, 479 macros
+[0m05:38:17.671825 [info ] [Dummy-1   ]: 
+[0m05:38:17.672472 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m05:38:17.672981 [info ] [Dummy-1   ]: 
+[0m05:38:17.673917 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m05:38:17.681609 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB'
+[0m05:38:17.683215 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB'
+[0m05:38:17.836244 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB"
+[0m05:38:17.837085 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB"
+[0m05:38:17.837744 [debug] [ThreadPool]: On list_ANALYTICS_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB"} */
+show terse schemas in database ANALYTICS_DB
+    limit 10000
+[0m05:38:17.838395 [debug] [ThreadPool]: On list_ANALYTICS_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB"} */
+show terse schemas in database ANALYTICS_DB
+    limit 10000
+[0m05:38:17.838997 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:38:17.839492 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:38:18.213783 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.374 seconds
+[0m05:38:18.216924 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.378 seconds
+[0m05:38:18.221607 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB_gold'
+[0m05:38:18.222923 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB, now list_ANALYTICS_DB_silver)
+[0m05:38:18.240660 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m05:38:18.245724 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m05:38:18.246559 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m05:38:18.247235 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m05:38:18.247874 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:38:18.248545 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:38:18.613356 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.365 seconds
+[0m05:38:18.614251 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.366 seconds
+[0m05:38:18.620142 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m05:38:18.622917 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m05:38:18.623587 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+show objects in ANALYTICS_DB.gold
+    limit 10000
+    
+;
+[0m05:38:18.624184 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+show objects in ANALYTICS_DB.silver
+    limit 10000
+    
+;
+[0m05:38:18.687817 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.063 seconds
+[0m05:38:18.690495 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m05:38:18.691108 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m05:38:18.702536 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.077 seconds
+[0m05:38:18.705041 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m05:38:18.705708 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m05:38:18.738912 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.047 seconds
+[0m05:38:18.758144 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.052 seconds
+[0m05:38:18.768264 [debug] [Thread-2 (]: Began running node model.analytics_project.stg_customers
+[0m05:38:18.769264 [debug] [Thread-3 (]: Began running node model.analytics_project.stg_orders
+[0m05:38:18.770209 [info ] [Thread-2 (]: 1 of 3 START sql table model silver.stg_customers .............................. [RUN]
+[0m05:38:18.771146 [info ] [Thread-3 (]: 2 of 3 START sql table model silver.stg_orders ................................. [RUN]
+[0m05:38:18.771901 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB_gold, now model.analytics_project.stg_customers)
+[0m05:38:18.772614 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB_silver, now model.analytics_project.stg_orders)
+[0m05:38:18.773294 [debug] [Thread-2 (]: Began compiling node model.analytics_project.stg_customers
+[0m05:38:18.773953 [debug] [Thread-3 (]: Began compiling node model.analytics_project.stg_orders
+[0m05:38:18.786605 [debug] [Thread-2 (]: Writing injected SQL for node "model.analytics_project.stg_customers"
+[0m05:38:18.793066 [debug] [Thread-3 (]: Writing injected SQL for node "model.analytics_project.stg_orders"
+[0m05:38:18.794249 [debug] [Thread-2 (]: Began executing node model.analytics_project.stg_customers
+[0m05:38:18.795045 [debug] [Thread-3 (]: Began executing node model.analytics_project.stg_orders
+[0m05:38:18.857543 [debug] [Thread-2 (]: Writing runtime sql for node "model.analytics_project.stg_customers"
+[0m05:38:18.866604 [debug] [Thread-3 (]: Writing runtime sql for node "model.analytics_project.stg_orders"
+[0m05:38:18.868487 [debug] [Thread-2 (]: Using snowflake connection "model.analytics_project.stg_customers"
+[0m05:38:18.869310 [debug] [Thread-2 (]: On model.analytics_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_customers"} */
+create or replace transient table ANALYTICS_DB.silver.stg_customers
+         as
+        (
+
+SELECT
+    CUSTOMER_ID,
+    CUSTOMER_NAME,
+    CASE 
+        WHEN EMAIL LIKE '%@%.%' THEN EMAIL 
+        ELSE NULL 
+    END AS EMAIL,
+    TO_DATE(SIGNUP_DATE, 'YYYY-MM-DD') AS SIGNUP_DATE
+FROM ANALYTICS_DB.bronze.raw_customers
+        );
+[0m05:38:18.870522 [debug] [Thread-3 (]: Using snowflake connection "model.analytics_project.stg_orders"
+[0m05:38:18.871110 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m05:38:18.871796 [debug] [Thread-3 (]: On model.analytics_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_orders"} */
+create or replace transient table ANALYTICS_DB.silver.stg_orders
+         as
+        (
+
+SELECT
+    ORDER_ID,
+    CUSTOMER_ID,
+    TO_DATE(ORDER_DATE, 'YYYY-MM-DD') AS ORDER_DATE,
+    CAST(NULLIF(AMOUNT, '') AS NUMBER) AS AMOUNT,
+    UPPER(STATUS) AS STATUS
+FROM ANALYTICS_DB.bronze.raw_orders
+WHERE ORDER_ID IS NOT NULL
+        );
+[0m05:38:18.872599 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m05:38:19.848244 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.977 seconds
+[0m05:38:19.882750 [info ] [Thread-2 (]: 1 of 3 OK created sql table model silver.stg_customers ......................... [[32mSUCCESS 1[0m in 1.11s]
+[0m05:38:19.883743 [debug] [Thread-2 (]: Finished running node model.analytics_project.stg_customers
+[0m05:38:19.916877 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 1.044 seconds
+[0m05:38:19.920768 [info ] [Thread-3 (]: 2 of 3 OK created sql table model silver.stg_orders ............................ [[32mSUCCESS 1[0m in 1.15s]
+[0m05:38:19.921804 [debug] [Thread-3 (]: Finished running node model.analytics_project.stg_orders
+[0m05:38:19.923348 [debug] [Thread-5 (]: Began running node model.analytics_project.daily_sales_summary
+[0m05:38:19.924423 [info ] [Thread-5 (]: 3 of 3 START sql dynamic_table model gold.daily_sales_summary .................. [RUN]
+[0m05:38:19.925307 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.analytics_project.daily_sales_summary'
+[0m05:38:19.925960 [debug] [Thread-5 (]: Began compiling node model.analytics_project.daily_sales_summary
+[0m05:38:19.932949 [debug] [Thread-5 (]: Writing injected SQL for node "model.analytics_project.daily_sales_summary"
+[0m05:38:19.933899 [debug] [Thread-5 (]: Began executing node model.analytics_project.daily_sales_summary
+[0m05:38:19.965766 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m05:38:19.966492 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m05:38:19.967062 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m05:38:20.330513 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.363 seconds
+[0m05:38:20.331379 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m05:38:20.332005 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+show dynamic tables
+            like 'DAILY_SALES_SUMMARY'
+            in schema ANALYTICS_DB.GOLD
+        ;
+[0m05:38:20.430330 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.098 seconds
+[0m05:38:20.431167 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m05:38:20.431819 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+select
+            "name",
+            "schema_name",
+            "database_name",
+            "text",
+            "target_lag",
+            "warehouse",
+            "refresh_mode"
+        from table(result_scan(last_query_id()))
+[0m05:38:20.763347 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.331 seconds
+[0m05:38:20.766151 [warn ] [Thread-5 (]: No configuration changes were identified on: `ANALYTICS_DB.gold.daily_sales_summary`. Continuing.
+[0m05:38:20.771296 [info ] [Thread-5 (]: 3 of 3 OK created sql dynamic_table model gold.daily_sales_summary ............. [[32mskip ANALYTICS_DB.gold.daily_sales_summary[0m in 0.85s]
+[0m05:38:20.772220 [debug] [Thread-5 (]: Finished running node model.analytics_project.daily_sales_summary
+[0m05:38:20.776469 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m05:38:20.777199 [debug] [Dummy-1   ]: Connection 'list_ANALYTICS_DB' was properly closed.
+[0m05:38:20.777701 [debug] [Dummy-1   ]: Connection 'model.analytics_project.stg_orders' was properly closed.
+[0m05:38:20.778155 [debug] [Dummy-1   ]: Connection 'model.analytics_project.stg_customers' was properly closed.
+[0m05:38:20.778677 [debug] [Dummy-1   ]: Connection 'model.analytics_project.daily_sales_summary' was properly closed.
+[0m05:38:20.779279 [info ] [Dummy-1   ]: 
+[0m05:38:20.779802 [info ] [Dummy-1   ]: Finished running 1 dynamic table model, 2 table models in 0 hours 0 minutes and 3.11 seconds (3.11s).
+[0m05:38:20.781126 [debug] [Dummy-1   ]: Command end result
+[0m05:38:20.812491 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m05:38:20.814988 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m05:38:20.823336 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m05:38:20.823902 [info ] [Dummy-1   ]: 
+[0m05:38:20.824579 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m05:38:20.825066 [info ] [Dummy-1   ]: 
+[0m05:38:20.825609 [info ] [Dummy-1   ]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m05:38:20.827465 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 5.033035, "process_in_blocks": "0", "process_kernel_time": 1.26, "process_mem_max_rss": "460196", "process_out_blocks": "0", "process_user_time": 5.65}
+[0m05:38:20.828135 [debug] [Dummy-1   ]: Command `cli build` succeeded at 05:38:20.827870 after 5.03 seconds
+[0m05:38:20.828776 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 06:58:59.603742 | 2f63e50a-52cf-4202-946d-d587c5710c15 ==============================
+[0m06:58:59.603742 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m06:58:59.604969 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'debug': 'False', 'warn_error': 'None', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt ', 'static_parser': 'True', 'target_path': '/tmp/dbt/target/', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m06:58:59.677656 [error] [Dummy-1   ]:  adapter: Invalid profile: 'user' is a required property.
+[0m06:58:59.968361 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m06:59:00.693313 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m06:59:00.848739 [info ] [Dummy-1   ]: Unable to do partial parsing because a project config has changed
+[0m06:59:02.714985 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m06:59:02.717668 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m06:59:02.773993 [info ] [Dummy-1   ]: Found 3 models, 2 sources, 479 macros
+[0m06:59:02.776674 [info ] [Dummy-1   ]: 
+[0m06:59:02.777310 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m06:59:02.777791 [info ] [Dummy-1   ]: 
+[0m06:59:02.778688 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m06:59:02.786254 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB'
+[0m06:59:02.787715 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB'
+[0m06:59:02.936895 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB"
+[0m06:59:02.937723 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB"
+[0m06:59:02.938471 [debug] [ThreadPool]: On list_ANALYTICS_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB"} */
+show terse schemas in database ANALYTICS_DB
+    limit 10000
+[0m06:59:02.939137 [debug] [ThreadPool]: On list_ANALYTICS_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB"} */
+show terse schemas in database ANALYTICS_DB
+    limit 10000
+[0m06:59:02.939709 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:59:02.940302 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:59:03.310270 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.370 seconds
+[0m06:59:03.326397 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.386 seconds
+[0m06:59:03.331422 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB_silver'
+[0m06:59:03.332643 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB, now list_ANALYTICS_DB_gold)
+[0m06:59:03.350206 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m06:59:03.355111 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m06:59:03.355788 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m06:59:03.356377 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m06:59:03.356900 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:59:03.357376 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:59:03.729358 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.372 seconds
+[0m06:59:03.735401 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m06:59:03.736058 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+show objects in ANALYTICS_DB.silver
+    limit 10000
+    
+;
+[0m06:59:03.754656 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.397 seconds
+[0m06:59:03.757077 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m06:59:03.757649 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+show objects in ANALYTICS_DB.gold
+    limit 10000
+    
+;
+[0m06:59:03.812675 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.076 seconds
+[0m06:59:03.815306 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m06:59:03.815919 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m06:59:03.825227 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.067 seconds
+[0m06:59:03.827750 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m06:59:03.828421 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m06:59:03.867072 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.050 seconds
+[0m06:59:03.887466 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.058 seconds
+[0m06:59:03.897498 [debug] [Thread-2 (]: Began running node model.analytics_project.stg_customers
+[0m06:59:03.898265 [debug] [Thread-3 (]: Began running node model.analytics_project.stg_orders
+[0m06:59:03.899324 [info ] [Thread-2 (]: 1 of 3 START sql dynamic_table model silver.stg_customers ...................... [RUN]
+[0m06:59:03.900187 [info ] [Thread-3 (]: 2 of 3 START sql dynamic_table model silver.stg_orders ......................... [RUN]
+[0m06:59:03.901022 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB_silver, now model.analytics_project.stg_customers)
+[0m06:59:03.902342 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB_gold, now model.analytics_project.stg_orders)
+[0m06:59:03.903144 [debug] [Thread-2 (]: Began compiling node model.analytics_project.stg_customers
+[0m06:59:03.903776 [debug] [Thread-3 (]: Began compiling node model.analytics_project.stg_orders
+[0m06:59:03.916102 [debug] [Thread-2 (]: Writing injected SQL for node "model.analytics_project.stg_customers"
+[0m06:59:03.925105 [debug] [Thread-3 (]: Writing injected SQL for node "model.analytics_project.stg_orders"
+[0m06:59:03.926515 [debug] [Thread-2 (]: Began executing node model.analytics_project.stg_customers
+[0m06:59:04.059219 [debug] [Thread-3 (]: Began executing node model.analytics_project.stg_orders
+[0m06:59:04.140564 [debug] [Thread-2 (]: Applying REPLACE to: "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS"
+[0m06:59:04.141466 [debug] [Thread-3 (]: Applying REPLACE to: "ANALYTICS_DB"."SILVER"."STG_ORDERS"
+[0m06:59:04.155138 [debug] [Thread-2 (]: Applying CREATE BACKUP to: "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS"
+[0m06:59:04.156376 [debug] [Thread-3 (]: Applying CREATE BACKUP to: "ANALYTICS_DB"."SILVER"."STG_ORDERS"
+[0m06:59:04.178955 [debug] [Thread-2 (]: Applying DROP to: "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS__dbt_backup"
+[0m06:59:04.180176 [debug] [Thread-3 (]: Applying DROP to: "ANALYTICS_DB"."SILVER"."STG_ORDERS__dbt_backup"
+[0m06:59:04.220514 [debug] [Thread-3 (]: Applying RENAME to: "ANALYTICS_DB"."SILVER"."STG_ORDERS"
+[0m06:59:04.218836 [debug] [Thread-2 (]: Applying RENAME to: "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS"
+[0m06:59:04.240288 [debug] [Thread-3 (]: Applying CREATE to: ANALYTICS_DB.silver.stg_orders
+[0m06:59:04.241504 [debug] [Thread-2 (]: Applying CREATE to: ANALYTICS_DB.silver.stg_customers
+[0m06:59:04.267638 [debug] [Thread-3 (]: Compilation Error in model stg_orders (models/silver/stg_orders.sql)
+  SnowflakeDynamicTableConfig.__init__() missing 1 required positional argument: 'target_lag'
+  
+  > in macro snowflake__get_create_sql (macros/relations/create.sql)
+  > called by macro get_create_sql (macros/relations/create.sql)
+  > called by macro default__get_replace_sql (macros/relations/replace.sql)
+  > called by macro snowflake__get_replace_sql (macros/relations/replace.sql)
+  > called by macro get_replace_sql (macros/relations/replace.sql)
+  > called by macro dynamic_table_get_build_sql (macros/materializations/dynamic_table.sql)
+  > called by macro materialization_dynamic_table_snowflake (macros/materializations/dynamic_table.sql)
+  > called by model stg_orders (models/silver/stg_orders.sql)
+[0m06:59:04.271685 [debug] [Thread-2 (]: Compilation Error in model stg_customers (models/silver/stg_customers.sql)
+  SnowflakeDynamicTableConfig.__init__() missing 1 required positional argument: 'target_lag'
+  
+  > in macro snowflake__get_create_sql (macros/relations/create.sql)
+  > called by macro get_create_sql (macros/relations/create.sql)
+  > called by macro default__get_replace_sql (macros/relations/replace.sql)
+  > called by macro snowflake__get_replace_sql (macros/relations/replace.sql)
+  > called by macro get_replace_sql (macros/relations/replace.sql)
+  > called by macro dynamic_table_get_build_sql (macros/materializations/dynamic_table.sql)
+  > called by macro materialization_dynamic_table_snowflake (macros/materializations/dynamic_table.sql)
+  > called by model stg_customers (models/silver/stg_customers.sql)
+[0m06:59:04.276721 [error] [Thread-3 (]: 2 of 3 ERROR creating sql dynamic_table model silver.stg_orders ................ [[31mERROR[0m in 0.37s]
+[0m06:59:04.277181 [error] [Thread-2 (]: 1 of 3 ERROR creating sql dynamic_table model silver.stg_customers ............. [[31mERROR[0m in 0.37s]
+[0m06:59:04.278155 [debug] [Thread-3 (]: Finished running node model.analytics_project.stg_orders
+[0m06:59:04.279172 [debug] [Thread-2 (]: Finished running node model.analytics_project.stg_customers
+[0m06:59:04.280345 [debug] [Thread-8 (]: Marking all children of 'model.analytics_project.stg_orders' to be skipped because of status 'error'.  Reason: Compilation Error in model stg_orders (models/silver/stg_orders.sql)
+  SnowflakeDynamicTableConfig.__init__() missing 1 required positional argument: 'target_lag'
+  
+  > in macro snowflake__get_create_sql (macros/relations/create.sql)
+  > called by macro get_create_sql (macros/relations/create.sql)
+  > called by macro default__get_replace_sql (macros/relations/replace.sql)
+  > called by macro snowflake__get_replace_sql (macros/relations/replace.sql)
+  > called by macro get_replace_sql (macros/relations/replace.sql)
+  > called by macro dynamic_table_get_build_sql (macros/materializations/dynamic_table.sql)
+  > called by macro materialization_dynamic_table_snowflake (macros/materializations/dynamic_table.sql)
+  > called by model stg_orders (models/silver/stg_orders.sql).
+[0m06:59:04.282334 [debug] [Thread-8 (]: Marking all children of 'model.analytics_project.stg_customers' to be skipped because of status 'error'.  Reason: Compilation Error in model stg_customers (models/silver/stg_customers.sql)
+  SnowflakeDynamicTableConfig.__init__() missing 1 required positional argument: 'target_lag'
+  
+  > in macro snowflake__get_create_sql (macros/relations/create.sql)
+  > called by macro get_create_sql (macros/relations/create.sql)
+  > called by macro default__get_replace_sql (macros/relations/replace.sql)
+  > called by macro snowflake__get_replace_sql (macros/relations/replace.sql)
+  > called by macro get_replace_sql (macros/relations/replace.sql)
+  > called by macro dynamic_table_get_build_sql (macros/materializations/dynamic_table.sql)
+  > called by macro materialization_dynamic_table_snowflake (macros/materializations/dynamic_table.sql)
+  > called by model stg_customers (models/silver/stg_customers.sql).
+[0m06:59:04.283886 [debug] [Thread-5 (]: Began running node model.analytics_project.daily_sales_summary
+[0m06:59:04.285057 [info ] [Thread-5 (]: 3 of 3 SKIP relation gold.daily_sales_summary .................................. [[33mSKIP[0m]
+[0m06:59:04.285808 [debug] [Thread-5 (]: Finished running node model.analytics_project.daily_sales_summary
+[0m06:59:04.289681 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m06:59:04.290301 [debug] [Dummy-1   ]: Connection 'list_ANALYTICS_DB' was properly closed.
+[0m06:59:04.290837 [debug] [Dummy-1   ]: Connection 'model.analytics_project.stg_orders' was properly closed.
+[0m06:59:04.291287 [debug] [Dummy-1   ]: Connection 'model.analytics_project.stg_customers' was properly closed.
+[0m06:59:04.291934 [info ] [Dummy-1   ]: 
+[0m06:59:04.292547 [info ] [Dummy-1   ]: Finished running 3 dynamic table models in 0 hours 0 minutes and 1.51 seconds (1.51s).
+[0m06:59:04.293857 [debug] [Dummy-1   ]: Command end result
+[0m06:59:04.326086 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m06:59:04.329015 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m06:59:04.337119 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m06:59:04.337702 [info ] [Dummy-1   ]: 
+[0m06:59:04.338450 [info ] [Dummy-1   ]: [31mCompleted with 2 errors, 0 partial successes, and 0 warnings:[0m
+[0m06:59:04.339063 [info ] [Dummy-1   ]: 
+[0m06:59:04.339784 [error] [Dummy-1   ]:   Compilation Error in model stg_orders (models/silver/stg_orders.sql)
+  SnowflakeDynamicTableConfig.__init__() missing 1 required positional argument: 'target_lag'
+  
+  > in macro snowflake__get_create_sql (macros/relations/create.sql)
+  > called by macro get_create_sql (macros/relations/create.sql)
+  > called by macro default__get_replace_sql (macros/relations/replace.sql)
+  > called by macro snowflake__get_replace_sql (macros/relations/replace.sql)
+  > called by macro get_replace_sql (macros/relations/replace.sql)
+  > called by macro dynamic_table_get_build_sql (macros/materializations/dynamic_table.sql)
+  > called by macro materialization_dynamic_table_snowflake (macros/materializations/dynamic_table.sql)
+  > called by model stg_orders (models/silver/stg_orders.sql)
+[0m06:59:04.340385 [info ] [Dummy-1   ]: 
+[0m06:59:04.341063 [error] [Dummy-1   ]:   Compilation Error in model stg_customers (models/silver/stg_customers.sql)
+  SnowflakeDynamicTableConfig.__init__() missing 1 required positional argument: 'target_lag'
+  
+  > in macro snowflake__get_create_sql (macros/relations/create.sql)
+  > called by macro get_create_sql (macros/relations/create.sql)
+  > called by macro default__get_replace_sql (macros/relations/replace.sql)
+  > called by macro snowflake__get_replace_sql (macros/relations/replace.sql)
+  > called by macro get_replace_sql (macros/relations/replace.sql)
+  > called by macro dynamic_table_get_build_sql (macros/materializations/dynamic_table.sql)
+  > called by macro materialization_dynamic_table_snowflake (macros/materializations/dynamic_table.sql)
+  > called by model stg_customers (models/silver/stg_customers.sql)
+[0m06:59:04.341631 [info ] [Dummy-1   ]: 
+[0m06:59:04.342163 [info ] [Dummy-1   ]: Done. PASS=0 WARN=0 ERROR=2 SKIP=1 TOTAL=3
+[0m06:59:04.344327 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 4.8378677, "process_in_blocks": "0", "process_kernel_time": 1.37, "process_mem_max_rss": "502156", "process_out_blocks": "0", "process_user_time": 6.98}
+[0m06:59:04.345064 [debug] [Dummy-1   ]: Command `cli run` failed at 06:59:04.344784 after 4.84 seconds
+[0m06:59:04.345695 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 07:03:29.943532 | 5cab4d8b-5b10-4ce2-a138-d78cc8e3335e ==============================
+[0m07:03:29.943532 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m07:03:29.944841 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'debug': 'False', 'warn_error': 'None', 'log_path': '/tmp/dbt/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': '/tmp/dbt/target/', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'False'}
+[0m07:03:30.022331 [error] [Dummy-1   ]:  adapter: Invalid profile: 'user' is a required property.
+[0m07:03:30.332282 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m07:03:31.116429 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m07:03:31.291274 [info ] [Dummy-1   ]: Unable to do partial parsing because a project config has changed
+[0m07:03:33.235891 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:03:33.238762 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:03:33.325399 [info ] [Dummy-1   ]: Found 3 models, 2 sources, 479 macros
+[0m07:03:33.328850 [info ] [Dummy-1   ]: 
+[0m07:03:33.329529 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m07:03:33.330024 [info ] [Dummy-1   ]: 
+[0m07:03:33.330893 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m07:03:33.338609 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB'
+[0m07:03:33.340531 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB'
+[0m07:03:33.489325 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB"
+[0m07:03:33.490168 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB"
+[0m07:03:33.490838 [debug] [ThreadPool]: On list_ANALYTICS_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB"} */
+show terse schemas in database ANALYTICS_DB
+    limit 10000
+[0m07:03:33.491480 [debug] [ThreadPool]: On list_ANALYTICS_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB"} */
+show terse schemas in database ANALYTICS_DB
+    limit 10000
+[0m07:03:33.492210 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:03:33.492810 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:03:33.839983 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.347 seconds
+[0m07:03:33.849376 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.357 seconds
+[0m07:03:33.880502 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB_silver'
+[0m07:03:33.881789 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB, now list_ANALYTICS_DB_gold)
+[0m07:03:33.900008 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m07:03:33.906818 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m07:03:33.907505 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:03:33.908112 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:03:33.908771 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:03:33.909286 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:03:34.388986 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.480 seconds
+[0m07:03:34.395070 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m07:03:34.395793 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+show objects in ANALYTICS_DB.silver
+    limit 10000
+    
+;
+[0m07:03:34.410815 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.501 seconds
+[0m07:03:34.413448 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m07:03:34.414157 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+show objects in ANALYTICS_DB.gold
+    limit 10000
+    
+;
+[0m07:03:34.452424 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.056 seconds
+[0m07:03:34.455231 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m07:03:34.455998 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m07:03:34.470901 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.056 seconds
+[0m07:03:34.473705 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m07:03:34.474475 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m07:03:34.500580 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.044 seconds
+[0m07:03:34.524480 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.049 seconds
+[0m07:03:34.536062 [debug] [Thread-2 (]: Began running node model.analytics_project.stg_customers
+[0m07:03:34.536986 [debug] [Thread-3 (]: Began running node model.analytics_project.stg_orders
+[0m07:03:34.538063 [info ] [Thread-2 (]: 1 of 3 START sql dynamic_table model silver.stg_customers ...................... [RUN]
+[0m07:03:34.539258 [info ] [Thread-3 (]: 2 of 3 START sql dynamic_table model silver.stg_orders ......................... [RUN]
+[0m07:03:34.540233 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB_gold, now model.analytics_project.stg_customers)
+[0m07:03:34.541024 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB_silver, now model.analytics_project.stg_orders)
+[0m07:03:34.541752 [debug] [Thread-2 (]: Began compiling node model.analytics_project.stg_customers
+[0m07:03:34.542407 [debug] [Thread-3 (]: Began compiling node model.analytics_project.stg_orders
+[0m07:03:34.555772 [debug] [Thread-2 (]: Writing injected SQL for node "model.analytics_project.stg_customers"
+[0m07:03:34.562822 [debug] [Thread-3 (]: Writing injected SQL for node "model.analytics_project.stg_orders"
+[0m07:03:34.564074 [debug] [Thread-2 (]: Began executing node model.analytics_project.stg_customers
+[0m07:03:34.564731 [debug] [Thread-3 (]: Began executing node model.analytics_project.stg_orders
+[0m07:03:34.617916 [debug] [Thread-2 (]: Applying REPLACE to: "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS"
+[0m07:03:34.618947 [debug] [Thread-3 (]: Applying REPLACE to: "ANALYTICS_DB"."SILVER"."STG_ORDERS"
+[0m07:03:34.632911 [debug] [Thread-2 (]: Applying CREATE BACKUP to: "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS"
+[0m07:03:34.634015 [debug] [Thread-3 (]: Applying CREATE BACKUP to: "ANALYTICS_DB"."SILVER"."STG_ORDERS"
+[0m07:03:34.682257 [debug] [Thread-2 (]: Applying DROP to: "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS__dbt_backup"
+[0m07:03:34.683537 [debug] [Thread-3 (]: Applying DROP to: "ANALYTICS_DB"."SILVER"."STG_ORDERS__dbt_backup"
+[0m07:03:34.707407 [debug] [Thread-2 (]: Applying RENAME to: "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS"
+[0m07:03:34.709363 [debug] [Thread-3 (]: Applying RENAME to: "ANALYTICS_DB"."SILVER"."STG_ORDERS"
+[0m07:03:34.732709 [debug] [Thread-2 (]: Applying CREATE to: ANALYTICS_DB.silver.stg_customers
+[0m07:03:34.733987 [debug] [Thread-3 (]: Applying CREATE to: ANALYTICS_DB.silver.stg_orders
+[0m07:03:34.760628 [debug] [Thread-2 (]: Applying DROP BACKUP to: "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS"
+[0m07:03:34.762302 [debug] [Thread-3 (]: Applying DROP BACKUP to: "ANALYTICS_DB"."SILVER"."STG_ORDERS"
+[0m07:03:34.765939 [debug] [Thread-2 (]: Applying DROP to: "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS__dbt_backup"
+[0m07:03:34.767206 [debug] [Thread-3 (]: Applying DROP to: "ANALYTICS_DB"."SILVER"."STG_ORDERS__dbt_backup"
+[0m07:03:34.772901 [debug] [Thread-2 (]: Writing runtime sql for node "model.analytics_project.stg_customers"
+[0m07:03:34.774566 [debug] [Thread-3 (]: Writing runtime sql for node "model.analytics_project.stg_orders"
+[0m07:03:34.777131 [debug] [Thread-2 (]: Using snowflake connection "model.analytics_project.stg_customers"
+[0m07:03:34.779321 [debug] [Thread-3 (]: Using snowflake connection "model.analytics_project.stg_orders"
+[0m07:03:34.780046 [debug] [Thread-2 (]: On model.analytics_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_customers"} */
+-- get the standard backup name
+    
+
+    -- drop any pre-existing backup
+    
+
+    
+        drop table if exists "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS__dbt_backup" cascade
+
+    
+
+;
+[0m07:03:34.780748 [debug] [Thread-3 (]: On model.analytics_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_orders"} */
+-- get the standard backup name
+    
+
+    -- drop any pre-existing backup
+    
+
+    
+        drop table if exists "ANALYTICS_DB"."SILVER"."STG_ORDERS__dbt_backup" cascade
+
+    
+
+;
+[0m07:03:34.781422 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m07:03:34.782036 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m07:03:35.109417 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.328 seconds
+[0m07:03:35.110282 [debug] [Thread-2 (]: Using snowflake connection "model.analytics_project.stg_customers"
+[0m07:03:35.111190 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.329 seconds
+[0m07:03:35.112051 [debug] [Thread-2 (]: On model.analytics_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_customers"} */
+-- use `render` to ensure that the fully qualified name is used
+    /*
+    Rename or move a table to the new name.
+
+    Args:
+        relation: SnowflakeRelation - relation to be renamed
+        new_name: Union[str, SnowflakeRelation] - new name for `relation`
+            if providing a string, the default database/schema will be used if that string is just an identifier
+            if providing a SnowflakeRelation, `render` will be used to produce a fully qualified name
+    Returns: templated string
+    */
+    alter table "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS" rename to "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS__dbt_backup";
+[0m07:03:35.112808 [debug] [Thread-3 (]: Using snowflake connection "model.analytics_project.stg_orders"
+[0m07:03:35.113907 [debug] [Thread-3 (]: On model.analytics_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_orders"} */
+-- use `render` to ensure that the fully qualified name is used
+    /*
+    Rename or move a table to the new name.
+
+    Args:
+        relation: SnowflakeRelation - relation to be renamed
+        new_name: Union[str, SnowflakeRelation] - new name for `relation`
+            if providing a string, the default database/schema will be used if that string is just an identifier
+            if providing a SnowflakeRelation, `render` will be used to produce a fully qualified name
+    Returns: templated string
+    */
+    alter table "ANALYTICS_DB"."SILVER"."STG_ORDERS" rename to "ANALYTICS_DB"."SILVER"."STG_ORDERS__dbt_backup";
+[0m07:03:35.163041 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.048 seconds
+[0m07:03:35.163826 [debug] [Thread-3 (]: Using snowflake connection "model.analytics_project.stg_orders"
+[0m07:03:35.164560 [debug] [Thread-3 (]: On model.analytics_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_orders"} */
+create dynamic table ANALYTICS_DB.silver.stg_orders
+        target_lag = '1 minutes'
+        warehouse = COMPUTE_WH
+        refresh_mode = INCREMENTAL
+
+        initialize = ON_CREATE
+
+        as (
+            
+
+SELECT
+    ORDER_ID,
+    CUSTOMER_ID,
+    TO_DATE(ORDER_DATE, 'YYYY-MM-DD') AS ORDER_DATE,
+    CAST(NULLIF(AMOUNT, '') AS NUMBER) AS AMOUNT,
+    UPPER(STATUS) AS STATUS
+FROM ANALYTICS_DB.bronze.raw_orders
+WHERE ORDER_ID IS NOT NULL
+        )
+
+    
+
+;
+[0m07:03:35.165932 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.052 seconds
+[0m07:03:35.166662 [debug] [Thread-2 (]: Using snowflake connection "model.analytics_project.stg_customers"
+[0m07:03:35.167296 [debug] [Thread-2 (]: On model.analytics_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_customers"} */
+create dynamic table ANALYTICS_DB.silver.stg_customers
+        target_lag = '1 minutes'
+        warehouse = COMPUTE_WH
+        refresh_mode = INCREMENTAL
+
+        initialize = ON_CREATE
+
+        as (
+            
+
+SELECT
+    CUSTOMER_ID,
+    CUSTOMER_NAME,
+    CASE 
+        WHEN EMAIL LIKE '%@%.%' THEN EMAIL 
+        ELSE NULL 
+    END AS EMAIL,
+    TO_DATE(SIGNUP_DATE, 'YYYY-MM-DD') AS SIGNUP_DATE
+FROM ANALYTICS_DB.bronze.raw_customers
+        )
+
+    
+
+;
+[0m07:03:35.920915 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.755 seconds
+[0m07:03:35.921733 [debug] [Thread-3 (]: Using snowflake connection "model.analytics_project.stg_orders"
+[0m07:03:35.922359 [debug] [Thread-3 (]: On model.analytics_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_orders"} */
+-- get the standard backup name
+    
+
+    
+
+    
+        drop table if exists "ANALYTICS_DB"."SILVER"."STG_ORDERS__dbt_backup" cascade
+[0m07:03:36.009152 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.841 seconds
+[0m07:03:36.010023 [debug] [Thread-2 (]: Using snowflake connection "model.analytics_project.stg_customers"
+[0m07:03:36.010664 [debug] [Thread-2 (]: On model.analytics_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_customers"} */
+-- get the standard backup name
+    
+
+    
+
+    
+        drop table if exists "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS__dbt_backup" cascade
+[0m07:03:36.016683 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.094 seconds
+[0m07:03:36.052701 [info ] [Thread-3 (]: 2 of 3 OK created sql dynamic_table model silver.stg_orders .................... [[32mSUCCESS 1[0m in 1.51s]
+[0m07:03:36.053783 [debug] [Thread-3 (]: Finished running node model.analytics_project.stg_orders
+[0m07:03:36.085781 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.074 seconds
+[0m07:03:36.089553 [info ] [Thread-2 (]: 1 of 3 OK created sql dynamic_table model silver.stg_customers ................. [[32mSUCCESS 1[0m in 1.55s]
+[0m07:03:36.090573 [debug] [Thread-2 (]: Finished running node model.analytics_project.stg_customers
+[0m07:03:36.092297 [debug] [Thread-5 (]: Began running node model.analytics_project.daily_sales_summary
+[0m07:03:36.093481 [info ] [Thread-5 (]: 3 of 3 START sql dynamic_table model gold.daily_sales_summary .................. [RUN]
+[0m07:03:36.094847 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.analytics_project.daily_sales_summary'
+[0m07:03:36.095480 [debug] [Thread-5 (]: Began compiling node model.analytics_project.daily_sales_summary
+[0m07:03:36.102669 [debug] [Thread-5 (]: Writing injected SQL for node "model.analytics_project.daily_sales_summary"
+[0m07:03:36.103652 [debug] [Thread-5 (]: Began executing node model.analytics_project.daily_sales_summary
+[0m07:03:36.120660 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m07:03:36.121390 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:03:36.121966 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m07:03:36.451962 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.330 seconds
+[0m07:03:36.452790 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m07:03:36.453417 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+show dynamic tables
+            like 'DAILY_SALES_SUMMARY'
+            in schema ANALYTICS_DB.GOLD
+        ;
+[0m07:03:36.539497 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.085 seconds
+[0m07:03:36.540327 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m07:03:36.540959 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+select
+            "name",
+            "schema_name",
+            "database_name",
+            "text",
+            "target_lag",
+            "warehouse",
+            "refresh_mode"
+        from table(result_scan(last_query_id()))
+[0m07:03:36.888651 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.347 seconds
+[0m07:03:36.891571 [warn ] [Thread-5 (]: No configuration changes were identified on: `ANALYTICS_DB.gold.daily_sales_summary`. Continuing.
+[0m07:03:36.896706 [info ] [Thread-5 (]: 3 of 3 OK created sql dynamic_table model gold.daily_sales_summary ............. [[32mskip ANALYTICS_DB.gold.daily_sales_summary[0m in 0.80s]
+[0m07:03:36.897744 [debug] [Thread-5 (]: Finished running node model.analytics_project.daily_sales_summary
+[0m07:03:36.901075 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m07:03:36.901757 [debug] [Dummy-1   ]: Connection 'list_ANALYTICS_DB' was properly closed.
+[0m07:03:36.902241 [debug] [Dummy-1   ]: Connection 'model.analytics_project.stg_customers' was properly closed.
+[0m07:03:36.902700 [debug] [Dummy-1   ]: Connection 'model.analytics_project.stg_orders' was properly closed.
+[0m07:03:36.903148 [debug] [Dummy-1   ]: Connection 'model.analytics_project.daily_sales_summary' was properly closed.
+[0m07:03:36.903782 [info ] [Dummy-1   ]: 
+[0m07:03:36.904397 [info ] [Dummy-1   ]: Finished running 3 dynamic table models in 0 hours 0 minutes and 3.57 seconds (3.57s).
+[0m07:03:36.905775 [debug] [Dummy-1   ]: Command end result
+[0m07:03:36.936101 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:03:36.939000 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:03:36.947083 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m07:03:36.947697 [info ] [Dummy-1   ]: 
+[0m07:03:36.948486 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m07:03:36.949063 [info ] [Dummy-1   ]: 
+[0m07:03:36.949746 [info ] [Dummy-1   ]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m07:03:36.951733 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 7.108205, "process_in_blocks": "0", "process_kernel_time": 1.49, "process_mem_max_rss": "515808", "process_out_blocks": "0", "process_user_time": 7.67}
+[0m07:03:36.952509 [debug] [Dummy-1   ]: Command `cli build` succeeded at 07:03:36.952200 after 7.11 seconds
+[0m07:03:36.953107 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 07:38:45.070525 | 173750d5-2c28-4b7a-b6dc-4d180f4c2b81 ==============================
+[0m07:38:45.070525 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m07:38:45.071734 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'debug': 'False', 'warn_error': 'None', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': '/tmp/dbt/target/', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'False'}
+[0m07:38:45.146710 [error] [Dummy-1   ]:  adapter: Invalid profile: 'user' is a required property.
+[0m07:38:45.453723 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m07:38:46.278083 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m07:38:46.526504 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m07:38:46.527490 [debug] [Dummy-1   ]: Partial parsing: updated file: analytics_project://models/silver/stg_orders.sql
+[0m07:38:47.231612 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:38:47.234303 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:38:47.314043 [info ] [Dummy-1   ]: Found 3 models, 2 sources, 479 macros
+[0m07:38:47.317029 [info ] [Dummy-1   ]: 
+[0m07:38:47.317743 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m07:38:47.318260 [info ] [Dummy-1   ]: 
+[0m07:38:47.319303 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m07:38:47.327204 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB'
+[0m07:38:47.328787 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB'
+[0m07:38:47.500248 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB"
+[0m07:38:47.501055 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB"
+[0m07:38:47.501695 [debug] [ThreadPool]: On list_ANALYTICS_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB"} */
+show terse schemas in database ANALYTICS_DB
+    limit 10000
+[0m07:38:47.502381 [debug] [ThreadPool]: On list_ANALYTICS_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB"} */
+show terse schemas in database ANALYTICS_DB
+    limit 10000
+[0m07:38:47.503060 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:38:47.503670 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:38:47.845117 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.341 seconds
+[0m07:38:47.856212 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.353 seconds
+[0m07:38:47.861278 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB_gold'
+[0m07:38:47.862646 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB, now list_ANALYTICS_DB_silver)
+[0m07:38:47.880663 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m07:38:47.887031 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m07:38:47.887752 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:38:47.888443 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:38:47.889049 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:38:47.889582 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:38:48.238160 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.349 seconds
+[0m07:38:48.245288 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.356 seconds
+[0m07:38:48.244226 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m07:38:48.247923 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m07:38:48.248676 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+show objects in ANALYTICS_DB.gold
+    limit 10000
+    
+;
+[0m07:38:48.249282 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+show objects in ANALYTICS_DB.silver
+    limit 10000
+    
+;
+[0m07:38:48.311155 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.061 seconds
+[0m07:38:48.312196 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.062 seconds
+[0m07:38:48.314787 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m07:38:48.317503 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m07:38:48.318547 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m07:38:48.319575 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m07:38:48.360734 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.040 seconds
+[0m07:38:48.363681 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.043 seconds
+[0m07:38:48.398139 [debug] [Thread-2 (]: Began running node model.analytics_project.stg_customers
+[0m07:38:48.399410 [debug] [Thread-3 (]: Began running node model.analytics_project.stg_orders
+[0m07:38:48.400818 [info ] [Thread-2 (]: 1 of 3 START sql dynamic_table model silver.stg_customers ...................... [RUN]
+[0m07:38:48.402217 [info ] [Thread-3 (]: 2 of 3 START sql dynamic_table model silver.stg_orders ......................... [RUN]
+[0m07:38:48.403444 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB_gold, now model.analytics_project.stg_customers)
+[0m07:38:48.404609 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB_silver, now model.analytics_project.stg_orders)
+[0m07:38:48.405758 [debug] [Thread-2 (]: Began compiling node model.analytics_project.stg_customers
+[0m07:38:48.406769 [debug] [Thread-3 (]: Began compiling node model.analytics_project.stg_orders
+[0m07:38:48.424031 [debug] [Thread-2 (]: Writing injected SQL for node "model.analytics_project.stg_customers"
+[0m07:38:48.431305 [debug] [Thread-3 (]: Writing injected SQL for node "model.analytics_project.stg_orders"
+[0m07:38:48.432662 [debug] [Thread-2 (]: Began executing node model.analytics_project.stg_customers
+[0m07:38:48.433245 [debug] [Thread-3 (]: Began executing node model.analytics_project.stg_orders
+[0m07:38:48.503942 [debug] [Thread-3 (]: Using snowflake connection "model.analytics_project.stg_orders"
+[0m07:38:48.498776 [debug] [Thread-2 (]: Using snowflake connection "model.analytics_project.stg_customers"
+[0m07:38:48.504799 [debug] [Thread-3 (]: On model.analytics_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_orders"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:38:48.505603 [debug] [Thread-2 (]: On model.analytics_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_customers"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:38:48.506383 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m07:38:48.507235 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m07:38:48.864470 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.358 seconds
+[0m07:38:48.865395 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.358 seconds
+[0m07:38:48.866147 [debug] [Thread-3 (]: Using snowflake connection "model.analytics_project.stg_orders"
+[0m07:38:48.866782 [debug] [Thread-2 (]: Using snowflake connection "model.analytics_project.stg_customers"
+[0m07:38:48.867401 [debug] [Thread-3 (]: On model.analytics_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_orders"} */
+show dynamic tables
+            like 'STG_ORDERS'
+            in schema ANALYTICS_DB.SILVER
+        ;
+[0m07:38:48.868058 [debug] [Thread-2 (]: On model.analytics_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_customers"} */
+show dynamic tables
+            like 'STG_CUSTOMERS'
+            in schema ANALYTICS_DB.SILVER
+        ;
+[0m07:38:48.938035 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.069 seconds
+[0m07:38:48.939350 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.070 seconds
+[0m07:38:48.940131 [debug] [Thread-2 (]: Using snowflake connection "model.analytics_project.stg_customers"
+[0m07:38:48.940932 [debug] [Thread-3 (]: Using snowflake connection "model.analytics_project.stg_orders"
+[0m07:38:48.941737 [debug] [Thread-2 (]: On model.analytics_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_customers"} */
+select
+            "name",
+            "schema_name",
+            "database_name",
+            "text",
+            "target_lag",
+            "warehouse",
+            "refresh_mode"
+        from table(result_scan(last_query_id()))
+[0m07:38:48.942397 [debug] [Thread-3 (]: On model.analytics_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_orders"} */
+select
+            "name",
+            "schema_name",
+            "database_name",
+            "text",
+            "target_lag",
+            "warehouse",
+            "refresh_mode"
+        from table(result_scan(last_query_id()))
+[0m07:38:49.246472 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.303 seconds
+[0m07:38:49.253833 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.311 seconds
+[0m07:38:49.256306 [debug] [Thread-3 (]: Applying ALTER to: "ANALYTICS_DB"."SILVER"."STG_ORDERS"
+[0m07:38:49.259076 [debug] [Thread-2 (]: Applying ALTER to: "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS"
+[0m07:38:49.259847 [debug] [Thread-3 (]: Applying UPDATE TARGET_LAG to: "ANALYTICS_DB"."SILVER"."STG_ORDERS"
+[0m07:38:49.260534 [debug] [Thread-2 (]: Applying UPDATE TARGET_LAG to: "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS"
+[0m07:38:49.265187 [debug] [Thread-3 (]: Writing runtime sql for node "model.analytics_project.stg_orders"
+[0m07:38:49.266173 [debug] [Thread-2 (]: Writing runtime sql for node "model.analytics_project.stg_customers"
+[0m07:38:49.267568 [debug] [Thread-3 (]: Using snowflake connection "model.analytics_project.stg_orders"
+[0m07:38:49.268356 [debug] [Thread-3 (]: On model.analytics_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_orders"} */
+alter dynamic table "ANALYTICS_DB"."SILVER"."STG_ORDERS" set
+            target_lag = '1 minutes'
+[0m07:38:49.269292 [debug] [Thread-2 (]: Using snowflake connection "model.analytics_project.stg_customers"
+[0m07:38:49.270359 [debug] [Thread-2 (]: On model.analytics_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_customers"} */
+alter dynamic table "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS" set
+            target_lag = '1 minutes'
+[0m07:38:49.325439 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.055 seconds
+[0m07:38:49.345526 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.074 seconds
+[0m07:38:49.363242 [info ] [Thread-3 (]: 2 of 3 OK created sql dynamic_table model silver.stg_orders .................... [[32mSUCCESS 1[0m in 0.95s]
+[0m07:38:49.364245 [info ] [Thread-2 (]: 1 of 3 OK created sql dynamic_table model silver.stg_customers ................. [[32mSUCCESS 1[0m in 0.96s]
+[0m07:38:49.365219 [debug] [Thread-3 (]: Finished running node model.analytics_project.stg_orders
+[0m07:38:49.366042 [debug] [Thread-2 (]: Finished running node model.analytics_project.stg_customers
+[0m07:38:49.367731 [debug] [Thread-5 (]: Began running node model.analytics_project.daily_sales_summary
+[0m07:38:49.368867 [info ] [Thread-5 (]: 3 of 3 START sql dynamic_table model gold.daily_sales_summary .................. [RUN]
+[0m07:38:49.369762 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.analytics_project.daily_sales_summary'
+[0m07:38:49.370322 [debug] [Thread-5 (]: Began compiling node model.analytics_project.daily_sales_summary
+[0m07:38:49.377156 [debug] [Thread-5 (]: Writing injected SQL for node "model.analytics_project.daily_sales_summary"
+[0m07:38:49.378052 [debug] [Thread-5 (]: Began executing node model.analytics_project.daily_sales_summary
+[0m07:38:49.384283 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m07:38:49.384973 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:38:49.385518 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m07:38:49.704383 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.319 seconds
+[0m07:38:49.705149 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m07:38:49.705816 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+show dynamic tables
+            like 'DAILY_SALES_SUMMARY'
+            in schema ANALYTICS_DB.GOLD
+        ;
+[0m07:38:49.839688 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.133 seconds
+[0m07:38:49.840491 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m07:38:49.841178 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+select
+            "name",
+            "schema_name",
+            "database_name",
+            "text",
+            "target_lag",
+            "warehouse",
+            "refresh_mode"
+        from table(result_scan(last_query_id()))
+[0m07:38:50.204353 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.362 seconds
+[0m07:38:50.207011 [warn ] [Thread-5 (]: No configuration changes were identified on: `ANALYTICS_DB.gold.daily_sales_summary`. Continuing.
+[0m07:38:50.212226 [info ] [Thread-5 (]: 3 of 3 OK created sql dynamic_table model gold.daily_sales_summary ............. [[32mskip ANALYTICS_DB.gold.daily_sales_summary[0m in 0.84s]
+[0m07:38:50.213281 [debug] [Thread-5 (]: Finished running node model.analytics_project.daily_sales_summary
+[0m07:38:50.216846 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m07:38:50.217585 [debug] [Dummy-1   ]: Connection 'list_ANALYTICS_DB' was properly closed.
+[0m07:38:50.218090 [debug] [Dummy-1   ]: Connection 'model.analytics_project.stg_orders' was properly closed.
+[0m07:38:50.218680 [debug] [Dummy-1   ]: Connection 'model.analytics_project.stg_customers' was properly closed.
+[0m07:38:50.219168 [debug] [Dummy-1   ]: Connection 'model.analytics_project.daily_sales_summary' was properly closed.
+[0m07:38:50.219850 [info ] [Dummy-1   ]: 
+[0m07:38:50.220473 [info ] [Dummy-1   ]: Finished running 3 dynamic table models in 0 hours 0 minutes and 2.90 seconds (2.90s).
+[0m07:38:50.221884 [debug] [Dummy-1   ]: Command end result
+[0m07:38:50.253817 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:38:50.256631 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:38:50.264959 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m07:38:50.265591 [info ] [Dummy-1   ]: 
+[0m07:38:50.266294 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m07:38:50.266837 [info ] [Dummy-1   ]: 
+[0m07:38:50.267407 [info ] [Dummy-1   ]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m07:38:50.288138 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 5.3165803, "process_in_blocks": "0", "process_kernel_time": 1.47, "process_mem_max_rss": "512780", "process_out_blocks": "0", "process_user_time": 6.36}
+[0m07:38:50.289185 [debug] [Dummy-1   ]: Command `cli build` succeeded at 07:38:50.288855 after 5.32 seconds
+[0m07:38:50.289784 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 07:54:06.767293 | d7dcefca-96ee-4556-94e8-6213617bfea5 ==============================
+[0m07:54:06.767293 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m07:54:06.768516 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/tmp/dbt/', 'log_path': '/tmp/dbt/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'log_format': 'default', 'static_parser': 'True', 'target_path': '/tmp/dbt/target/', 'introspect': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m07:54:06.840131 [error] [Dummy-1   ]:  adapter: Invalid profile: 'user' is a required property.
+[0m07:54:07.142222 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m07:54:07.912208 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m07:54:08.166688 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m07:54:08.167685 [debug] [Dummy-1   ]: Partial parsing: updated file: analytics_project://models/silver/stg_orders.sql
+[0m07:54:08.865683 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:54:08.868214 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:54:08.948077 [info ] [Dummy-1   ]: Found 3 models, 2 sources, 479 macros
+[0m07:54:08.951119 [info ] [Dummy-1   ]: 
+[0m07:54:08.951748 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m07:54:08.952250 [info ] [Dummy-1   ]: 
+[0m07:54:08.953073 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m07:54:08.960630 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB'
+[0m07:54:08.962020 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB'
+[0m07:54:09.112647 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB"
+[0m07:54:09.113471 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB"
+[0m07:54:09.114076 [debug] [ThreadPool]: On list_ANALYTICS_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB"} */
+show terse schemas in database ANALYTICS_DB
+    limit 10000
+[0m07:54:09.114628 [debug] [ThreadPool]: On list_ANALYTICS_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB"} */
+show terse schemas in database ANALYTICS_DB
+    limit 10000
+[0m07:54:09.115182 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:54:09.115688 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:54:09.426433 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.310 seconds
+[0m07:54:09.427474 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.312 seconds
+[0m07:54:09.434656 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB_silver'
+[0m07:54:09.436848 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB, now list_ANALYTICS_DB_gold)
+[0m07:54:09.455679 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m07:54:09.462102 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m07:54:09.462824 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:54:09.463421 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:54:09.463991 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:54:09.464521 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:54:09.770319 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.306 seconds
+[0m07:54:09.777404 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.313 seconds
+[0m07:54:09.776277 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m07:54:09.780014 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m07:54:09.780683 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+show objects in ANALYTICS_DB.gold
+    limit 10000
+    
+;
+[0m07:54:09.781244 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+show objects in ANALYTICS_DB.silver
+    limit 10000
+    
+;
+[0m07:54:09.835075 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.053 seconds
+[0m07:54:09.837778 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m07:54:09.838828 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.057 seconds
+[0m07:54:09.839438 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m07:54:09.841828 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m07:54:09.842785 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m07:54:09.884180 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.041 seconds
+[0m07:54:09.885003 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.043 seconds
+[0m07:54:09.897225 [debug] [Thread-2 (]: Began running node model.analytics_project.stg_customers
+[0m07:54:09.897991 [debug] [Thread-3 (]: Began running node model.analytics_project.stg_orders
+[0m07:54:09.899124 [info ] [Thread-2 (]: 1 of 3 START sql dynamic_table model silver.stg_customers ...................... [RUN]
+[0m07:54:09.900045 [info ] [Thread-3 (]: 2 of 3 START sql dynamic_table model silver.stg_orders ......................... [RUN]
+[0m07:54:09.900948 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB_silver, now model.analytics_project.stg_customers)
+[0m07:54:09.901599 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB_gold, now model.analytics_project.stg_orders)
+[0m07:54:09.902211 [debug] [Thread-2 (]: Began compiling node model.analytics_project.stg_customers
+[0m07:54:09.902766 [debug] [Thread-3 (]: Began compiling node model.analytics_project.stg_orders
+[0m07:54:09.915504 [debug] [Thread-2 (]: Writing injected SQL for node "model.analytics_project.stg_customers"
+[0m07:54:09.922116 [debug] [Thread-3 (]: Writing injected SQL for node "model.analytics_project.stg_orders"
+[0m07:54:09.923303 [debug] [Thread-2 (]: Began executing node model.analytics_project.stg_customers
+[0m07:54:09.923864 [debug] [Thread-3 (]: Began executing node model.analytics_project.stg_orders
+[0m07:54:09.986645 [debug] [Thread-2 (]: Using snowflake connection "model.analytics_project.stg_customers"
+[0m07:54:09.991508 [debug] [Thread-3 (]: Using snowflake connection "model.analytics_project.stg_orders"
+[0m07:54:09.992347 [debug] [Thread-2 (]: On model.analytics_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_customers"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:54:09.993072 [debug] [Thread-3 (]: On model.analytics_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_orders"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:54:09.993742 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m07:54:09.994373 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m07:54:10.303715 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.309 seconds
+[0m07:54:10.304675 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.311 seconds
+[0m07:54:10.305405 [debug] [Thread-3 (]: Using snowflake connection "model.analytics_project.stg_orders"
+[0m07:54:10.306177 [debug] [Thread-2 (]: Using snowflake connection "model.analytics_project.stg_customers"
+[0m07:54:10.306901 [debug] [Thread-3 (]: On model.analytics_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_orders"} */
+show dynamic tables
+            like 'STG_ORDERS'
+            in schema ANALYTICS_DB.SILVER
+        ;
+[0m07:54:10.307550 [debug] [Thread-2 (]: On model.analytics_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_customers"} */
+show dynamic tables
+            like 'STG_CUSTOMERS'
+            in schema ANALYTICS_DB.SILVER
+        ;
+[0m07:54:10.377060 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.069 seconds
+[0m07:54:10.378227 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.070 seconds
+[0m07:54:10.379053 [debug] [Thread-3 (]: Using snowflake connection "model.analytics_project.stg_orders"
+[0m07:54:10.379695 [debug] [Thread-2 (]: Using snowflake connection "model.analytics_project.stg_customers"
+[0m07:54:10.380356 [debug] [Thread-3 (]: On model.analytics_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_orders"} */
+select
+            "name",
+            "schema_name",
+            "database_name",
+            "text",
+            "target_lag",
+            "warehouse",
+            "refresh_mode"
+        from table(result_scan(last_query_id()))
+[0m07:54:10.380983 [debug] [Thread-2 (]: On model.analytics_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_customers"} */
+select
+            "name",
+            "schema_name",
+            "database_name",
+            "text",
+            "target_lag",
+            "warehouse",
+            "refresh_mode"
+        from table(result_scan(last_query_id()))
+[0m07:54:10.703084 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.321 seconds
+[0m07:54:10.711762 [debug] [Thread-3 (]: Applying ALTER to: "ANALYTICS_DB"."SILVER"."STG_ORDERS"
+[0m07:54:10.712837 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.331 seconds
+[0m07:54:10.713596 [debug] [Thread-3 (]: Applying UPDATE TARGET_LAG to: "ANALYTICS_DB"."SILVER"."STG_ORDERS"
+[0m07:54:10.716170 [debug] [Thread-2 (]: Applying ALTER to: "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS"
+[0m07:54:10.721044 [debug] [Thread-3 (]: Writing runtime sql for node "model.analytics_project.stg_orders"
+[0m07:54:10.721811 [debug] [Thread-2 (]: Applying UPDATE TARGET_LAG to: "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS"
+[0m07:54:10.722960 [debug] [Thread-2 (]: Writing runtime sql for node "model.analytics_project.stg_customers"
+[0m07:54:10.723955 [debug] [Thread-3 (]: Using snowflake connection "model.analytics_project.stg_orders"
+[0m07:54:10.724818 [debug] [Thread-3 (]: On model.analytics_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_orders"} */
+alter dynamic table "ANALYTICS_DB"."SILVER"."STG_ORDERS" set
+            target_lag = '1 minutes'
+[0m07:54:10.725688 [debug] [Thread-2 (]: Using snowflake connection "model.analytics_project.stg_customers"
+[0m07:54:10.726670 [debug] [Thread-2 (]: On model.analytics_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_customers"} */
+alter dynamic table "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS" set
+            target_lag = '1 minutes'
+[0m07:54:10.783637 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.057 seconds
+[0m07:54:10.807813 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.080 seconds
+[0m07:54:10.821214 [info ] [Thread-3 (]: 2 of 3 OK created sql dynamic_table model silver.stg_orders .................... [[32mSUCCESS 1[0m in 0.91s]
+[0m07:54:10.822205 [info ] [Thread-2 (]: 1 of 3 OK created sql dynamic_table model silver.stg_customers ................. [[32mSUCCESS 1[0m in 0.92s]
+[0m07:54:10.823227 [debug] [Thread-3 (]: Finished running node model.analytics_project.stg_orders
+[0m07:54:10.824116 [debug] [Thread-2 (]: Finished running node model.analytics_project.stg_customers
+[0m07:54:10.825849 [debug] [Thread-5 (]: Began running node model.analytics_project.daily_sales_summary
+[0m07:54:10.826888 [info ] [Thread-5 (]: 3 of 3 START sql dynamic_table model gold.daily_sales_summary .................. [RUN]
+[0m07:54:10.827782 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.analytics_project.daily_sales_summary'
+[0m07:54:10.828605 [debug] [Thread-5 (]: Began compiling node model.analytics_project.daily_sales_summary
+[0m07:54:10.835545 [debug] [Thread-5 (]: Writing injected SQL for node "model.analytics_project.daily_sales_summary"
+[0m07:54:10.836496 [debug] [Thread-5 (]: Began executing node model.analytics_project.daily_sales_summary
+[0m07:54:10.842635 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m07:54:10.843322 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:54:10.843928 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m07:54:11.137581 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.293 seconds
+[0m07:54:11.138708 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m07:54:11.139463 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+show dynamic tables
+            like 'DAILY_SALES_SUMMARY'
+            in schema ANALYTICS_DB.GOLD
+        ;
+[0m07:54:11.208796 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.068 seconds
+[0m07:54:11.209653 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m07:54:11.210395 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+select
+            "name",
+            "schema_name",
+            "database_name",
+            "text",
+            "target_lag",
+            "warehouse",
+            "refresh_mode"
+        from table(result_scan(last_query_id()))
+[0m07:54:11.522245 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.311 seconds
+[0m07:54:11.524910 [warn ] [Thread-5 (]: No configuration changes were identified on: `ANALYTICS_DB.gold.daily_sales_summary`. Continuing.
+[0m07:54:11.530045 [info ] [Thread-5 (]: 3 of 3 OK created sql dynamic_table model gold.daily_sales_summary ............. [[32mskip ANALYTICS_DB.gold.daily_sales_summary[0m in 0.70s]
+[0m07:54:11.531010 [debug] [Thread-5 (]: Finished running node model.analytics_project.daily_sales_summary
+[0m07:54:11.535065 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m07:54:11.536695 [debug] [Dummy-1   ]: Connection 'list_ANALYTICS_DB' was properly closed.
+[0m07:54:11.537185 [debug] [Dummy-1   ]: Connection 'model.analytics_project.stg_orders' was properly closed.
+[0m07:54:11.537647 [debug] [Dummy-1   ]: Connection 'model.analytics_project.stg_customers' was properly closed.
+[0m07:54:11.538088 [debug] [Dummy-1   ]: Connection 'model.analytics_project.daily_sales_summary' was properly closed.
+[0m07:54:11.538864 [info ] [Dummy-1   ]: 
+[0m07:54:11.539443 [info ] [Dummy-1   ]: Finished running 3 dynamic table models in 0 hours 0 minutes and 2.59 seconds (2.59s).
+[0m07:54:11.540860 [debug] [Dummy-1   ]: Command end result
+[0m07:54:11.570926 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:54:11.573523 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:54:11.581757 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m07:54:11.582397 [info ] [Dummy-1   ]: 
+[0m07:54:11.583120 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m07:54:11.583653 [info ] [Dummy-1   ]: 
+[0m07:54:11.584275 [info ] [Dummy-1   ]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m07:54:11.586367 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 4.914408, "process_in_blocks": "0", "process_kernel_time": 1.38, "process_mem_max_rss": "513788", "process_out_blocks": "0", "process_user_time": 5.97}
+[0m07:54:11.587123 [debug] [Dummy-1   ]: Command `cli build` succeeded at 07:54:11.586841 after 4.92 seconds
+[0m07:54:11.587811 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 08:01:54.941652 | 8db0de07-6aa6-485c-ac3f-7c206b156888 ==============================
+[0m08:01:54.941652 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m08:01:54.942913 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/tmp/dbt/logs', 'profiles_dir': '/tmp/dbt/', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt ', 'introspect': 'True', 'static_parser': 'True', 'target_path': '/tmp/dbt/target/', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m08:01:55.018988 [error] [Dummy-1   ]:  adapter: Invalid profile: 'user' is a required property.
+[0m08:01:55.329633 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m08:01:56.182453 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m08:01:56.444450 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m08:01:56.445186 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m08:01:56.722472 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m08:01:56.726331 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m08:01:56.833472 [info ] [Dummy-1   ]: Found 3 models, 2 sources, 479 macros
+[0m08:01:56.836488 [info ] [Dummy-1   ]: 
+[0m08:01:56.837269 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m08:01:56.837811 [info ] [Dummy-1   ]: 
+[0m08:01:56.838901 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m08:01:56.846634 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB'
+[0m08:01:56.848461 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB'
+[0m08:01:57.005891 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB"
+[0m08:01:57.006731 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB"
+[0m08:01:57.007371 [debug] [ThreadPool]: On list_ANALYTICS_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB"} */
+show terse schemas in database ANALYTICS_DB
+    limit 10000
+[0m08:01:57.007968 [debug] [ThreadPool]: On list_ANALYTICS_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB"} */
+show terse schemas in database ANALYTICS_DB
+    limit 10000
+[0m08:01:57.008632 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:01:57.009185 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:01:57.498694 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.490 seconds
+[0m08:01:57.507878 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.498 seconds
+[0m08:01:57.514446 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ANALYTICS_DB_silver'
+[0m08:01:57.516115 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB, now list_ANALYTICS_DB_gold)
+[0m08:01:57.541907 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m08:01:57.549154 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m08:01:57.550190 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m08:01:57.551123 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m08:01:57.551884 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:01:57.552666 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:01:57.964153 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.411 seconds
+[0m08:01:57.970533 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m08:01:57.971275 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+show objects in ANALYTICS_DB.gold
+    limit 10000
+    
+;
+[0m08:01:58.037666 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.486 seconds
+[0m08:01:58.038809 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.067 seconds
+[0m08:01:58.041346 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m08:01:58.043960 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_gold"
+[0m08:01:58.044677 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+show objects in ANALYTICS_DB.silver
+    limit 10000
+    
+;
+[0m08:01:58.045270 [debug] [ThreadPool]: On list_ANALYTICS_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_gold"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m08:01:58.089984 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.044 seconds
+[0m08:01:58.105315 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.059 seconds
+[0m08:01:58.108053 [debug] [ThreadPool]: Using snowflake connection "list_ANALYTICS_DB_silver"
+[0m08:01:58.108875 [debug] [ThreadPool]: On list_ANALYTICS_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "connection_name": "list_ANALYTICS_DB_silver"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m08:01:58.150368 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.041 seconds
+[0m08:01:58.161388 [debug] [Thread-2 (]: Began running node model.analytics_project.stg_customers
+[0m08:01:58.162281 [debug] [Thread-3 (]: Began running node model.analytics_project.stg_orders
+[0m08:01:58.163324 [info ] [Thread-2 (]: 1 of 3 START sql dynamic_table model silver.stg_customers ...................... [RUN]
+[0m08:01:58.164467 [info ] [Thread-3 (]: 2 of 3 START sql dynamic_table model silver.stg_orders ......................... [RUN]
+[0m08:01:58.165326 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB_silver, now model.analytics_project.stg_customers)
+[0m08:01:58.165990 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_ANALYTICS_DB_gold, now model.analytics_project.stg_orders)
+[0m08:01:58.166702 [debug] [Thread-2 (]: Began compiling node model.analytics_project.stg_customers
+[0m08:01:58.167390 [debug] [Thread-3 (]: Began compiling node model.analytics_project.stg_orders
+[0m08:01:58.180808 [debug] [Thread-2 (]: Writing injected SQL for node "model.analytics_project.stg_customers"
+[0m08:01:58.187741 [debug] [Thread-3 (]: Writing injected SQL for node "model.analytics_project.stg_orders"
+[0m08:01:58.189154 [debug] [Thread-2 (]: Began executing node model.analytics_project.stg_customers
+[0m08:01:58.195732 [debug] [Thread-3 (]: Began executing node model.analytics_project.stg_orders
+[0m08:01:58.243755 [debug] [Thread-2 (]: Applying REPLACE to: "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS"
+[0m08:01:58.245674 [debug] [Thread-3 (]: Applying REPLACE to: "ANALYTICS_DB"."SILVER"."STG_ORDERS"
+[0m08:01:58.259917 [debug] [Thread-2 (]: Applying CREATE BACKUP to: "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS"
+[0m08:01:58.261023 [debug] [Thread-3 (]: Applying CREATE BACKUP to: "ANALYTICS_DB"."SILVER"."STG_ORDERS"
+[0m08:01:58.288757 [debug] [Thread-2 (]: Applying DROP to: "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS__dbt_backup"
+[0m08:01:58.289935 [debug] [Thread-3 (]: Applying DROP to: "ANALYTICS_DB"."SILVER"."STG_ORDERS__dbt_backup"
+[0m08:01:58.314856 [debug] [Thread-2 (]: Applying RENAME to: "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS"
+[0m08:01:58.316897 [debug] [Thread-3 (]: Applying RENAME to: "ANALYTICS_DB"."SILVER"."STG_ORDERS"
+[0m08:01:58.337266 [debug] [Thread-2 (]: Applying CREATE to: ANALYTICS_DB.silver.stg_customers
+[0m08:01:58.338640 [debug] [Thread-3 (]: Applying CREATE to: ANALYTICS_DB.silver.stg_orders
+[0m08:01:58.367711 [debug] [Thread-2 (]: Applying DROP BACKUP to: "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS"
+[0m08:01:58.369312 [debug] [Thread-3 (]: Applying DROP BACKUP to: "ANALYTICS_DB"."SILVER"."STG_ORDERS"
+[0m08:01:58.372961 [debug] [Thread-2 (]: Applying DROP to: "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS__dbt_backup"
+[0m08:01:58.374264 [debug] [Thread-3 (]: Applying DROP to: "ANALYTICS_DB"."SILVER"."STG_ORDERS__dbt_backup"
+[0m08:01:58.379962 [debug] [Thread-2 (]: Writing runtime sql for node "model.analytics_project.stg_customers"
+[0m08:01:58.381587 [debug] [Thread-3 (]: Writing runtime sql for node "model.analytics_project.stg_orders"
+[0m08:01:58.384299 [debug] [Thread-2 (]: Using snowflake connection "model.analytics_project.stg_customers"
+[0m08:01:58.386881 [debug] [Thread-3 (]: Using snowflake connection "model.analytics_project.stg_orders"
+[0m08:01:58.387517 [debug] [Thread-2 (]: On model.analytics_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_customers"} */
+-- get the standard backup name
+    
+
+    -- drop any pre-existing backup
+    
+
+    
+        drop table if exists "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS__dbt_backup" cascade
+
+    
+
+;
+[0m08:01:58.388267 [debug] [Thread-3 (]: On model.analytics_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_orders"} */
+-- get the standard backup name
+    
+
+    -- drop any pre-existing backup
+    
+
+    
+        drop table if exists "ANALYTICS_DB"."SILVER"."STG_ORDERS__dbt_backup" cascade
+
+    
+
+;
+[0m08:01:58.389104 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m08:01:58.389702 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m08:01:59.009703 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.620 seconds
+[0m08:01:59.010564 [debug] [Thread-2 (]: Using snowflake connection "model.analytics_project.stg_customers"
+[0m08:01:59.011300 [debug] [Thread-2 (]: On model.analytics_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_customers"} */
+-- use `render` to ensure that the fully qualified name is used
+    /*
+    Rename or move a table to the new name.
+
+    Args:
+        relation: SnowflakeRelation - relation to be renamed
+        new_name: Union[str, SnowflakeRelation] - new name for `relation`
+            if providing a string, the default database/schema will be used if that string is just an identifier
+            if providing a SnowflakeRelation, `render` will be used to produce a fully qualified name
+    Returns: templated string
+    */
+    alter table "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS" rename to "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS__dbt_backup";
+[0m08:01:59.038332 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.648 seconds
+[0m08:01:59.039129 [debug] [Thread-3 (]: Using snowflake connection "model.analytics_project.stg_orders"
+[0m08:01:59.039857 [debug] [Thread-3 (]: On model.analytics_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_orders"} */
+-- use `render` to ensure that the fully qualified name is used
+    /*
+    Rename or move a table to the new name.
+
+    Args:
+        relation: SnowflakeRelation - relation to be renamed
+        new_name: Union[str, SnowflakeRelation] - new name for `relation`
+            if providing a string, the default database/schema will be used if that string is just an identifier
+            if providing a SnowflakeRelation, `render` will be used to produce a fully qualified name
+    Returns: templated string
+    */
+    alter table "ANALYTICS_DB"."SILVER"."STG_ORDERS" rename to "ANALYTICS_DB"."SILVER"."STG_ORDERS__dbt_backup";
+[0m08:01:59.072337 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.060 seconds
+[0m08:01:59.073119 [debug] [Thread-2 (]: Using snowflake connection "model.analytics_project.stg_customers"
+[0m08:01:59.073781 [debug] [Thread-2 (]: On model.analytics_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_customers"} */
+create dynamic table ANALYTICS_DB.silver.stg_customers
+        target_lag = '1 minutes'
+        warehouse = COMPUTE_WH
+        refresh_mode = INCREMENTAL
+
+        initialize = ON_CREATE
+
+        as (
+            
+
+SELECT
+    CUSTOMER_ID,
+    CUSTOMER_NAME,
+    CASE 
+        WHEN EMAIL LIKE '%@%.%' THEN EMAIL 
+        ELSE NULL 
+    END AS EMAIL,
+    TO_DATE(SIGNUP_DATE, 'YYYY-MM-DD') AS SIGNUP_DATE
+FROM ANALYTICS_DB.bronze.raw_customers
+        )
+
+    
+
+;
+[0m08:01:59.119872 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.079 seconds
+[0m08:01:59.120670 [debug] [Thread-3 (]: Using snowflake connection "model.analytics_project.stg_orders"
+[0m08:01:59.121345 [debug] [Thread-3 (]: On model.analytics_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_orders"} */
+create dynamic table ANALYTICS_DB.silver.stg_orders
+        target_lag = '1 minutes'
+        warehouse = COMPUTE_WH
+        refresh_mode = INCREMENTAL
+
+        initialize = ON_CREATE
+
+        as (
+            
+
+SELECT
+    ORDER_ID,
+    CUSTOMER_ID,
+    TO_DATE(ORDER_DATE, 'YYYY-MM-DD') AS ORDER_DATE,
+    CAST(NULLIF(AMOUNT, '') AS NUMBER) AS AMOUNT,
+    UPPER(STATUS) AS STATUS
+FROM ANALYTICS_DB.bronze.raw_orders
+WHERE ORDER_ID IS NOT NULL
+QUALIFY ROW_NUMBER() OVER (
+    PARTITION BY ORDER_ID 
+    ORDER BY ORDER_DATE DESC  -- Or any column that indicates recency (e.g., event_ts, ingestion_ts)
+) = 1
+        )
+
+    
+
+;
+[0m08:02:00.369774 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.295 seconds
+[0m08:02:00.370550 [debug] [Thread-2 (]: Using snowflake connection "model.analytics_project.stg_customers"
+[0m08:02:00.371153 [debug] [Thread-2 (]: On model.analytics_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_customers"} */
+-- get the standard backup name
+    
+
+    
+
+    
+        drop table if exists "ANALYTICS_DB"."SILVER"."STG_CUSTOMERS__dbt_backup" cascade
+[0m08:02:00.423899 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 1.302 seconds
+[0m08:02:00.424686 [debug] [Thread-3 (]: Using snowflake connection "model.analytics_project.stg_orders"
+[0m08:02:00.425286 [debug] [Thread-3 (]: On model.analytics_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.stg_orders"} */
+-- get the standard backup name
+    
+
+    
+
+    
+        drop table if exists "ANALYTICS_DB"."SILVER"."STG_ORDERS__dbt_backup" cascade
+[0m08:02:00.473577 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.102 seconds
+[0m08:02:00.508782 [info ] [Thread-2 (]: 1 of 3 OK created sql dynamic_table model silver.stg_customers ................. [[32mSUCCESS 1[0m in 2.34s]
+[0m08:02:00.509853 [debug] [Thread-2 (]: Finished running node model.analytics_project.stg_customers
+[0m08:02:00.525834 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.100 seconds
+[0m08:02:00.529621 [info ] [Thread-3 (]: 2 of 3 OK created sql dynamic_table model silver.stg_orders .................... [[32mSUCCESS 1[0m in 2.36s]
+[0m08:02:00.530622 [debug] [Thread-3 (]: Finished running node model.analytics_project.stg_orders
+[0m08:02:00.532297 [debug] [Thread-5 (]: Began running node model.analytics_project.daily_sales_summary
+[0m08:02:00.533477 [info ] [Thread-5 (]: 3 of 3 START sql dynamic_table model gold.daily_sales_summary .................. [RUN]
+[0m08:02:00.534429 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.analytics_project.daily_sales_summary'
+[0m08:02:00.535013 [debug] [Thread-5 (]: Began compiling node model.analytics_project.daily_sales_summary
+[0m08:02:00.542347 [debug] [Thread-5 (]: Writing injected SQL for node "model.analytics_project.daily_sales_summary"
+[0m08:02:00.543339 [debug] [Thread-5 (]: Began executing node model.analytics_project.daily_sales_summary
+[0m08:02:00.556739 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m08:02:00.557468 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m08:02:00.558026 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m08:02:01.314408 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.756 seconds
+[0m08:02:01.315228 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m08:02:01.315854 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+show dynamic tables
+            like 'DAILY_SALES_SUMMARY'
+            in schema ANALYTICS_DB.GOLD
+        ;
+[0m08:02:01.413889 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.097 seconds
+[0m08:02:01.414681 [debug] [Thread-5 (]: Using snowflake connection "model.analytics_project.daily_sales_summary"
+[0m08:02:01.415310 [debug] [Thread-5 (]: On model.analytics_project.daily_sales_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "analytics_project", "target_name": "dev", "node_id": "model.analytics_project.daily_sales_summary"} */
+select
+            "name",
+            "schema_name",
+            "database_name",
+            "text",
+            "target_lag",
+            "warehouse",
+            "refresh_mode"
+        from table(result_scan(last_query_id()))
+[0m08:02:01.875990 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.460 seconds
+[0m08:02:01.878990 [warn ] [Thread-5 (]: No configuration changes were identified on: `ANALYTICS_DB.gold.daily_sales_summary`. Continuing.
+[0m08:02:01.884113 [info ] [Thread-5 (]: 3 of 3 OK created sql dynamic_table model gold.daily_sales_summary ............. [[32mskip ANALYTICS_DB.gold.daily_sales_summary[0m in 1.35s]
+[0m08:02:01.885108 [debug] [Thread-5 (]: Finished running node model.analytics_project.daily_sales_summary
+[0m08:02:01.888397 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m08:02:01.889064 [debug] [Dummy-1   ]: Connection 'model.analytics_project.stg_orders' was properly closed.
+[0m08:02:01.889623 [debug] [Dummy-1   ]: Connection 'list_ANALYTICS_DB' was properly closed.
+[0m08:02:01.890106 [debug] [Dummy-1   ]: Connection 'model.analytics_project.stg_customers' was properly closed.
+[0m08:02:01.890560 [debug] [Dummy-1   ]: Connection 'model.analytics_project.daily_sales_summary' was properly closed.
+[0m08:02:01.891181 [info ] [Dummy-1   ]: 
+[0m08:02:01.891724 [info ] [Dummy-1   ]: Finished running 3 dynamic table models in 0 hours 0 minutes and 5.05 seconds (5.05s).
+[0m08:02:01.893205 [debug] [Dummy-1   ]: Command end result
+[0m08:02:01.924216 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m08:02:01.926976 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m08:02:01.935486 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m08:02:01.936109 [info ] [Dummy-1   ]: 
+[0m08:02:01.936795 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m08:02:01.937296 [info ] [Dummy-1   ]: 
+[0m08:02:01.937822 [info ] [Dummy-1   ]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m08:02:01.939906 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 7.098703, "process_in_blocks": "0", "process_kernel_time": 1.4, "process_mem_max_rss": "460080", "process_out_blocks": "0", "process_user_time": 5.92}
+[0m08:02:01.940648 [debug] [Dummy-1   ]: Command `cli build` succeeded at 08:02:01.940367 after 7.10 seconds
+[0m08:02:01.941213 [debug] [Dummy-1   ]: Flushing usage events

@@ -1,4 +1,8 @@
-{{ config(materialized='table') }}
+{{ config(
+    materialized='dynamic_table',
+    snowflake_warehouse='COMPUTE_WH',
+    refresh_mode='INCREMENTAL'
+) }}
 
 SELECT
     CUSTOMER_ID,
