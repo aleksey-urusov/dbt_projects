@@ -26,10 +26,13 @@ INSERT INTO ANALYTICS_DB.BRONZE.RAW_CUSTOMERS VALUES
 ('CUST001', 'Alice Smith', 'alice@example.com', '2025-01-01'),
 ('CUST002', 'Bob Johnson', 'bob@invalid', '2025-02-15'),
 ('CUST003', 'Charlie Brown', 'cb@valid', '2025-03-20'),
-('CUST004', 'JD Vance', 'alice@example.com', '2024-01-01'),
+('CUST004', 'U1', 'alice@example.com', '2024-01-01'),
 ('CUST005', 'Bob the Gmail', 'bob@gmai.com', '2023-02-15'),
-('CUST006', 'Hamalla Karris', 'stupid@bitch.com', '2023-03-20'),
+('CUST006', 'u2', 'u2@u2.com', '2023-03-20'),
 ('CUST007', 'N the N', 'n@n.com','2025-03-20');
+
+INSERT INTO ANALYTICS_DB.BRONZE.RAW_CUSTOMERS VALUES
+('CUST010', 'N the N', 'n10@n10.com','2025-01-20');
 
 
 INSERT INTO ANALYTICS_DB.BRONZE.RAW_ORDERS VALUES
@@ -83,11 +86,11 @@ INSERT INTO ANALYTICS_DB.BRONZE.RAW_ORDERS VALUES
 ('ORD039', 'CUST008', '2025-12-24', '111.33', 'completed');
 
 INSERT INTO ANALYTICS_DB.BRONZE.RAW_ORDERS VALUES
-('ORD035', 'CUST001', '2025-12-25', '140.99', 'completed'),
-('ORD036', 'CUST001', '2025-12-25', '129.99', 'completed'),
-('ORD037', 'CUST004', '2025-12-25', '114.75', 'completed'),
-('ORD038', 'CUST004', '2025-12-25', '100.00', 'completed'),
-('ORD039', 'CUST004', '2025-12-25', '1.33', 'completed');
+('ORD040', 'CUST001', '2025-12-25', '140.99', 'completed'),
+('ORD041', 'CUST001', '2025-12-25', '129.99', 'completed'),
+('ORD042', 'CUST004', '2025-12-25', '114.75', 'completed'),
+('ORD043', 'CUST004', '2025-12-25', '100.00', 'completed'),
+('ORD044', 'CUST010', '2025-12-25', '100.33', 'completed');
 
 select * from ANALYTICS_DB.GOLD.DAILY_SALES_SUMMARY;
 select * from ANALYTICS_DB.SILVER.STG_ORDERS;

@@ -1,32 +1,5 @@
 
-        
-
-    
-        create or replace dynamic table ANALYTICS_DB.gold.daily_sales_summary
-        target_lag = '5 minutes'
-        warehouse = COMPUTE_WH
-        refresh_mode = INCREMENTAL
-
-        initialize = ON_CREATE
-
-        as (
+        alter dynamic table "ANALYTICS_DB"."GOLD"."DAILY_SALES_SUMMARY" set
+            target_lag = '5 minutes'
             
-
-SELECT
-    o.ORDER_DATE,
-    COUNT(DISTINCT o.ORDER_ID) AS TOTAL_ORDERS,
-    COUNT(DISTINCT o.CUSTOMER_ID) AS UNIQUE_CUSTOMERS,
-    SUM(o.AMOUNT) AS TOTAL_SALES_AMOUNT,
-    AVG(o.AMOUNT) AS AVG_ORDER_AMOUNT
-FROM ANALYTICS_DB.silver.stg_orders o
-JOIN ANALYTICS_DB.silver.stg_customers c ON o.CUSTOMER_ID = c.CUSTOMER_ID
-WHERE o.STATUS = 'COMPLETED'
-  AND o.AMOUNT IS NOT NULL
-GROUP BY o.ORDER_DATE
-ORDER BY o.ORDER_DATE DESC
-        )
-
-    
-
-
     
