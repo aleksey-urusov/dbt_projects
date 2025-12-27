@@ -1,12 +1,10 @@
-dbt_try:
+analytics_project:  
   target: dev
   outputs:
     dev:
       type: snowflake
-      account: 'not needed'
-      user: 'not needed'
-      role: accountadmin
-      database: DBT
-      schema: DBT_PROJECTS
+      role: ACCOUNTADMIN  
+      database: ANALYTICS_DB
       warehouse: COMPUTE_WH
-   
+      schema: silver
+      threads: 4   

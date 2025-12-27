@@ -1,0 +1,9 @@
+
+
+SELECT
+  ORDER_NUM
+, CUSTOMER_ID
+, AMOUNT
+, SKU
+, ORDER_DATE 
+FROM DBT.ecomm.order_raw

@@ -1,0 +1,32 @@
+CREATE OR REPLACE PROCEDURE DBT.ECOMM.LOAD_FROM_STAGE(
+    STAGE_NM     VARCHAR,   -- e.g. '@my_stage/path/'
+    TARGET_TABLE VARCHAR,   -- e.g. 'DBT.ECOMM.CUSTOMER_RAW'
+    FILE_FORMAT  VARCHAR    -- e.g. 'MY_CSV_FORMAT'
+)
+RETURNS VARCHAR
+LANGUAGE SQL
+EXECUTE AS CALLER
+AS
+$$
+DECLARE
+    copy_sql VARCHAR;
+BEGIN
+    copy_sql := 
+        'COPY INTO ' || TARGET_TABLE ||
+        ' FROM ' || STAGE_NM ||
+        ' FILE_FORMAT = (FORMAT_NAME = ''' || FILE_FORMAT || ''')' ||
+        ' PURGE = TRUE';
+
+    EXECUTE IMMEDIATE :copy_sql;
+
+    RETURN 'LOAD successful – ' || SQLROWCOUNT || ' rows copied';
+EXCEPTION
+    WHEN OTHER THEN
+        RETURN 'ERROR: ' || SQLERRM || ' – SQL: ' || copy_sql;
+END;
+$$;
+
+
+
+
+CALL  DBT.ECOMM.LOAD_FROM_STAGE('@DBT.ECOMM.ECOMM_STAGE_CUSTOMER', 'DBT.ECOMM.CUSTOMER_RAW', 'DBT.ECOMM.ECOMM_STAGE_CUSTOMER')

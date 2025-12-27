@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: bronze
+    schema: bronze
+    database: ANALYTICS_DB
+    tables:
+      - name: raw_orders
+      - name: raw_customers

@@ -1,27 +1,20 @@
-# Project
-name: dbt_try
-version: "1.0"
+name: 'analytics_project'
+version: '1.0.0'
 config-version: 2
-profile: dbt_try
+profile: analytics_project
 
-## Sources
-model-paths: [models]
-analysis-paths: [analysis]
-test-paths: [tests]
-seed-paths: [seeds]
-macro-paths: [macros]
-snapshot-paths: [snapshots]
-
-## Target
-target-path: scripts
-clean-targets: [scripts, dbt_modules]
+model-paths: ["models"]
 
 models:
-  dbt_try: # this matches the `name:`` config
-    +materialized: view 
-    marts:
-      +materialized: table      
-      customer:
-        +schema: customer     
-
-        
+  analytics_project:
+    silver:
+      +materialized: dynamic_table
+      +schema: silver
+      +target_lag: '1 minutes'
+      +snowflake_warehouse: COMPUTE_WH
+      +tags: ["silver"]
+    gold:
+      +materialized: dynamic_table
+      +schema: gold
+      +snowflake_warehouse: COMPUTE_WH
+      +target_lag: '5 minutes'
